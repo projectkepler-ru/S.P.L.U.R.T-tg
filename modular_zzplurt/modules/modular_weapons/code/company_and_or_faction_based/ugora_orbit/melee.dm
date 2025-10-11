@@ -16,6 +16,7 @@
 Daisho (large and small)
 Yes, If you're thinking of a certain other place, you're correct. And I also enjoy Arknights too.
 The sprite is custom made by @Wolf751 for the purpose of this server.
+Speaking of which, daisho are also fun :3
 ===*/
 
 /obj/item/storage/belt/secdaisho
