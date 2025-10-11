@@ -12,14 +12,14 @@ Yog Knights, Ugora Orbit Knights of Yog.
 	icon = 'modular_zzplurt/master_files/icons/obj/clothing/job/belts.dmi'
 	icon_state = "daisho"
 	set_items = list(
-		/obj/item/clothing/suit/hooded/explorer,
+		/obj/item/storage/belt/secdaisho,
 		/obj/item/clothing/mask/gas/explorer,
 	)
 
 /datum/voucher_set/yog_knight/tanto_belt
 	name = "Standard Belt with Knife"
 	description = "A fire-proof suit for exploring hot environments. It can't be reinforced with goliath plates, but is ash storm proof."
-	icon = 'modular_zzplurt/master_files/icons/misc/voucher.dmi'
+	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "security"
 	set_items = list(
 		/obj/item/clothing/suit/hooded/seva,
@@ -36,10 +36,10 @@ Yog Knights, Ugora Orbit Knights of Yog.
 
 //Code to redeem new items at the mining vendor using the suit voucher
 //More items can be added in the lists and in the if statement.
-/obj/machinery/computer/order_console/mining/proc/redeem_suit_voucher(obj/item/suit_voucher/voucher, mob/redeemer)
+/obj/machinery/vending/security/proc/redeem_melee_voucher(obj/item/melee_voucher/voucher, mob/redeemer)
 	var/items = list(
-		"SEVA suit" = image(icon = 'modular_skyrat/master_files/icons/obj/clothing/suits.dmi', icon_state = "seva"),
-		"Explorer suit" = image(icon = 'icons/obj/clothing/suits/utility.dmi', icon_state = "explorer"),
+		"Security Daisho" = image(icon = 'modular_skyrat/master_files/icons/obj/clothing/suits.dmi', icon_state = "seva"),
+		"Security Belt + Tanto" = image(icon = 'icons/obj/clothing/suits/utility.dmi', icon_state = "explorer"),
 	)
 
 	var/selection = show_radial_menu(redeemer, src, items, require_near = TRUE, tooltips = TRUE)

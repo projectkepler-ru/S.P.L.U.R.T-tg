@@ -1,7 +1,7 @@
 /datum/supply_pack/security/armory/secdaisho
 	name = "Oscillating Sword Crate"
 	desc = "A three pack of the Ugora Orbit branded two handed sword and the sheath for them."
-	cost = CARGO_CRATE_VALUE * 15
+	cost = CARGO_CRATE_VALUE * 20
 	contains = list(/obj/item/storage/belt/secdaisho = 3)
 	crate_name = "osculating sword"
 
@@ -21,7 +21,7 @@ Speaking of which, daisho are also fun :3
 
 /obj/item/storage/belt/secdaisho
 	name = "security combination sheath"
-	desc = "A modified scabbard intended to hold a sword and baton at the same time."
+	desc = "A modified scabbard intended to hold a sword and compact baton at the same time."
 	icon = 'modular_zzplurt/master_files/icons/obj/clothing/job/belts.dmi'
 	worn_icon = 'modular_zzplurt/master_files/icons/mob/clothing/job/belt.dmi'
 	icon_state = "daisho"
@@ -34,12 +34,12 @@ Speaking of which, daisho are also fun :3
 	atom_storage.max_total_storage = WEIGHT_CLASS_BULKY
 	atom_storage.set_holdable(list(
 		/obj/item/melee/oscula,
-		/obj/item/melee/baton,
+		/obj/item/melee/baton/tanto,
 		))
 
 /obj/item/storage/belt/secdaisho/full/PopulateContents()
-	new obj/item/melee/oscula(src)
-	new /obj/item/melee/baton/security/loaded(src)
+	new /obj/item/melee/oscula(src)
+	new /obj/item/melee/baton/tanto(src)
 	update_appearance()
 
 
@@ -76,16 +76,33 @@ Speaking of which, daisho are also fun :3
 	force = 12
 	damtype = BURN
 	wound_bonus = 10
-	exposed_wound_bonus = 20
+	exposed_wound_bonus = -30
+	demolition_mod = 0.8
+	//I understand it's unrealistic, but I want to avoid people using the sword to break crate or locker open. Also yes this means its less effective against a lot of other thing, but we'll get there. Trust.
 	/// How much damage to do unwielded, this makes it do less than survival knife but the same as our Tanto
 	var/force_unwielded = 12
-	/// 20 damage is ok. It's the same as shooting a single thermal pistol at a time
+	/// 20 damage is ok. It's the same as shooting a single thermal pistol at a time, when it come to raw DPS difference, this wont cut it.
 	var/force_wielded = 20
 	/// How much AP should this have when one handed. This make it so the sword isn't completely worthless should you have even just a bit of armour
 	var/ap_unwielded = 15
-	/// 30 is an okay number, enough to get through block chance and armour
-	var/ap_wielded = 30
+	/// 25 is an okay number, enough to get through block chance and armour, Yes it does seems very high. but bear in mind that's very similar to most available sec ranged AP option (barring the X-Ray laser at 100% AP)
+	var/ap_wielded = 25
+	/* In regards to concern on the fact that there is a difference of 6 ticks between this and any standard melee cooldown
+	/// | Refer to below for linear graph. First number represent the damage, second number represent tickrate.
+	/// | [1]    [2]  [3]    [4]     |===|
+	/// | 12:2, 24:4, 36:6, 48:8     |===|
+	/// | 30:8, 60:16, 90:24, 120:32 |===|
+		As we can see, the DPS of the Oscillating Sword vs Energy Sword is high
 
+		The problem is that although there is a significantly lower tickrate, each cyclic rate(Melee Hit Per Strafe) is significantly higher.
+		Say, if you're only getting hit in every time you walk by them!
+		This means the energy sword has the upperhand because 2 hit would already be severe for your limbs
+
+		The sword has a lower overall damage and does not deal brute wound (no bleed out) on the fast mode
+		Yes, this sword is one of the more complicated one in term of balance and it may feel oppressive
+		Due to how many feature it has and the system put in place. And I intend to address all of it one at a time.
+	*/
+	attack_speed = CLICK_CD_RAPID
 
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
@@ -128,8 +145,8 @@ Speaking of which, daisho are also fun :3
 	force = 12 //This is more effective when the target is laying down
 	w_class = WEIGHT_CLASS_SMALL //It's not exactly big but it's kind of long.
 	throwforce = 20 //Long Slim Throwing Knives
-	wound_bonus = 0
-	exposed_wound_bonus = 20
+	wound_bonus = 0 //We want to avoid this being too effective at wounding out of nowhere.
+	exposed_wound_bonus = 15 //It's a slim long knife, prepare yourself.
 	armour_penetration = 20 // You should be able to use it fairly often and effectively
 
 /obj/item/knife/oscu_tanto/examine_more(mob/user)
@@ -155,7 +172,7 @@ Speaking of which, daisho are also fun :3
 		ritual_worthy = TRUE
 
 	if(ritual_worthy)
-		MODIFY_ATTACK_FORCE_MULTIPLIER(attack_modifiers, 3) ///This makes it do 36 damage
+		MODIFY_ATTACK_FORCE_MULTIPLIER(attack_modifiers, 2.5) ///This makes it do 30 damage, still a lot but its situational enough
 
 	return ..()
 
