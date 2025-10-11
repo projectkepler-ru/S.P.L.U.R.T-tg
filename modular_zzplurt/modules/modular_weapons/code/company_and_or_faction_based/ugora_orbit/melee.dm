@@ -61,6 +61,8 @@ Speaking of which, daisho are also fun :3
 		update_appearance()
 		return CLICK_ACTION_SUCCESS
 
+
+
 /obj/item/melee/oscula
 	name = "oscillating sword"
 	desc = "An expertly crafted historical human sword once used by the Persians which has recently gained traction due to Venusian historal recreation sports. One small flaw, the Taj-based company who produces these has mistaken them for British cavalry sabres akin to those used by high ranking Nanotrasen officials. Atleast it cuts the same way!"
@@ -194,3 +196,4 @@ Speaking of which, daisho are also fun :3
 /datum/storage/security_belt/webbing
 	max_slots = 7
 
+/obj/item/melee/baton/tanto
