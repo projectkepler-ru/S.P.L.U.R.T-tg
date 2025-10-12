@@ -7,7 +7,7 @@
 
 /datum/supply_pack/security/sectanto
 	name = "Tanto Crate"
-	desc = "A three pack of the Ugora Orbit branded tanto, sharp precision dagger for finishing off target."
+	desc = "A three pack of the Ugora Orbit branded tanto. Thin sharp blade meant for last resort."
 	cost = CARGO_CRATE_VALUE * 8
 	contains = list(/obj/item/knife/oscu_tanto = 3)
 	crate_name = "security knife"
@@ -88,14 +88,16 @@ Speaking of which, daisho are also fun :3
 	/// 25 is an okay number, enough to get through block chance and armour, Yes it does seems very high. but bear in mind that's very similar to most available sec ranged AP option (barring the X-Ray laser at 100% AP)
 	var/ap_wielded = 25
 	/* In regards to concern on the fact that there is a difference of 6 ticks between this and any standard melee cooldown
-	/// | Refer to below for linear graph. First number represent the damage, second number represent tickrate.
-	/// | [1]    [2]  [3]    [4]     |===|
-	/// | 12:2, 24:4, 36:6, 48:8     |===|
-	/// | 30:8, 60:16, 90:24, 120:32 |===|
+	/// | Refer to below for linear graph. Damage:TickRate
+	/// | [1]    [2]  [3]    [4]     														   |===|
+	/// | 12:2, 24:4, 36:6, 48:8     														   |===|
+	/// | 30:8, 60:16, 90:24, 120:32 														   |===|
+	/// | 12:2 * 4 = 48:8 > 30:8 = 30:8														   |===|
+	/// | Tickrate can be misleading, as standard melee tick is practically equal to a second. |===|
 		As we can see, the DPS of the Oscillating Sword vs Energy Sword is high
 
-		The problem is that although there is a significantly lower tickrate, each cyclic rate(Melee Hit Per Strafe) is significantly higher.
-		Say, if you're only getting hit in every time you walk by them!
+		There is a significantly lower tickrate, so each cyclic rate(Melee Hit Per Strafe) is significantly higher.
+		If you're only getting hit in every time you walk by them, then energy sword would outdamage
 		This means the energy sword has the upperhand because 2 hit would already be severe for your limbs
 
 		The sword has a lower overall damage and does not deal brute wound (no bleed out) on the fast mode
