@@ -30,6 +30,11 @@ With help of an aussie catgirl
 	/// An ID for our drop discharge timer.
 	var/drop_discharge_timerid
 
+/obj/item/gun/energy/laser/energy_bow/equipped(mob/user, slot, initial)
+    . = ..()
+    if(slot != ITEM_SLOT_HANDS)
+        dischage()
+
 /obj/item/gun/energy/laser/energy_bow/examine_more(mob/user)
 	. = ..()
 	. += span_info("The Hardlight Energy bow can be actively drawn while you're on the move but will slow you down while it is drawn. \
