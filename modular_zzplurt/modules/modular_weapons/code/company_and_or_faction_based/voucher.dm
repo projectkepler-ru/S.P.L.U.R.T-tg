@@ -46,7 +46,7 @@ Yog Knights, Ugora Orbit Knights of Yog.
 	var/drop_location = drop_location()
 	switch(selection)
 		if("Security Daisho")
-			new /obj/item/storage/belt/secdaisho/ful(drop_location)
+			new /obj/item/storage/belt/secdaisho/full(drop_location)
 		if("Security Belt + Tanto")
 			new /obj/item/storage/belt/security/full(drop_location)
 
