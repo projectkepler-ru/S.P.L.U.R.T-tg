@@ -89,7 +89,7 @@ Speaking of which, daisho are also fun :3
 	var/ap_wielded = 25
 	/* In regards to concern on the fact that there is a difference of 6 ticks between this and any standard melee cooldown
 	/// | Refer to below for linear graph. Damage:TickRate
-	/// | [1]    [2]  [3]    [4]     														   |===|
+	/// | [1]    [2]  [3]    [4]     	This is assuming you are hitting in strafe			   |===|
 	/// | 12:2, 24:4, 36:6, 48:8     														   |===|
 	/// | 30:8, 60:16, 90:24, 120:32 														   |===|
 	/// | 12:2 * 4 = 48:8 > 30:8 = 30:8														   |===|
@@ -115,8 +115,6 @@ Speaking of which, daisho are also fun :3
 
 /obj/item/melee/oscula/Initialize(mapload)
 	. = ..()
-	force = force_unwielded
-	armour_penetration = ap_unwielded
 	AddComponent(/datum/component/two_handed, \
 		force_unwielded = force_unwielded, \
 		force_wielded = force_wielded, \

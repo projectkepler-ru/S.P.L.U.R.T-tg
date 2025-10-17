@@ -33,7 +33,7 @@ With help of an aussie catgirl
 /obj/item/gun/energy/laser/energy_bow/equipped(mob/user, slot, initial)
     . = ..()
     if(slot != ITEM_SLOT_HANDS)
-        dischage()
+        discharge()
 
 /obj/item/gun/energy/laser/energy_bow/examine_more(mob/user)
 	. = ..()
@@ -55,12 +55,12 @@ With help of an aussie catgirl
 		charge_sound_cooldown_time = 0.5 SECONDS, \
 		charge_move = IGNORE_USER_LOC_CHANGE, \
 	)
-	dischage()
+	discharge()
 
 /obj/item/gun/energy/laser/energy_bow/equipped(mob/user, slot, initial)
 	. = ..()
 	if(slot != ITEM_SLOT_HANDS)
-		dischage()
+		discharge()
 
 /obj/item/gun/energy/laser/energy_bow/dropped()
 	. = ..()
