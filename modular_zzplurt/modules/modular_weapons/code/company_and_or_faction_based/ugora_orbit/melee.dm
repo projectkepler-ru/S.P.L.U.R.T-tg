@@ -43,25 +43,64 @@ Speaking of which, daisho are also fun :3
 	update_appearance()
 
 
-//Perhaps we can use more fancy text? I don't know.
-/obj/item/storage/belt/secdaisho/attack_hand(mob/user)
+//Is it really an issue if AGPL. from doppler #303 If paxil pings me not to use this then it can be altered
+//as an aside, not everything is gonna be the same anyway. People have different vision
+//As of writing this I still have not been able to pull exu alter yet
+//Just one more pull and maybe I can get her
+
+/obj/item/storage/belt/secdaisho/examine(mob/user)
+	. = ..()
 	if(length(contents))
-		var/obj/item/melee/oscula = contents[1]
-		user.visible_message(span_notice("[user] draws [sword] out of [src]."), span_notice("You draws [sword] from [src]."))
-		user.put_in_hands(sword)
+		. += span_notice("<b>Left Click</b> to draw a stored blade, <b>Right Click</b> to draw a stored baton while wearing.")
+
+/obj/item/storage/belt/secdaisho/attack_hand(mob/user, list/modifiers)
+	if(!(user.get_slot_by_item(src) & ITEM_SLOT_BELT) && !(user.get_slot_by_item(src) & ITEM_SLOT_BACK) && !(user.get_slot_by_item(src) & ITEM_SLOT_SUITSTORE))
+		return ..()
+	for(var/obj/item/melee/oscula/yato in contents)
+		user.visible_message(span_notice("[user] draws [yato] from [src]."), span_notice("You draw [yato] from [src]."))
+		user.put_in_hands(yato)
+		playsound(user, 'sound/items/sheath.ogg', 50, TRUE)
 		update_appearance()
-		return CLICK_ACTION_SUCCESS
-//Realistically you're going to want your sword out first anyway
+		return
+	return ..()
 
-/obj/item/storage/belt/secdaisho/attack_hand_secondary(mob/user)
-	if(length(contents))
-		var/obj/item/melee/baton = contents[1]
-		user.visible_message(span_notice("[user] draws [baton] out of [src]."), span_notice("You draws [baton] from [src]."))
-		user.put_in_hands(baton)
+/obj/item/storage/belt/secdaisho/attack_hand_secondary(mob/user, list/modifiers)
+	if(!(user.get_slot_by_item(src) & ITEM_SLOT_BELT) && !(user.get_slot_by_item(src) & ITEM_SLOT_BACK) && !(user.get_slot_by_item(src) & ITEM_SLOT_SUITSTORE))
+		return ..()
+	for(var/obj/item/melee/baton/tanto/stored in contents)
+		user.visible_message(span_notice("[user] draws [stored] from [src]."), span_notice("You draw [stored] from [src]."))
+		user.put_in_hands(stored)
+		playsound(user, 'sound/items/sheath.ogg', 50, TRUE)
 		update_appearance()
-		return CLICK_ACTION_SUCCESS
+		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	return ..()
 
+/obj/item/storage/belt/secdaisho/update_icon_state()
+	var/has_sword = FALSE
+	var/has_baton = FALSE
+	for(var/obj/thing in contents)
+		if(has_baton && has_sword)
+			break
+		if(istype(thing, /obj/item/melee/baton/tanto))
+			has_baton = TRUE
+		if(istype(thing, /obj/item/melee/oscula))
+			has_sword = TRUE
 
+	icon_state = initial(icon_state)
+	worn_icon_state = initial(worn_icon_state)
+
+	var/next_appendage
+	if(has_sword && has_baton)
+		next_appendage = "-full"
+	else if(has_sword)
+		next_appendage = "-sword"
+	else if(has_baton)
+		next_appendage = "-baton"
+
+	if(next_appendage)
+		icon_state += next_appendage
+		worn_icon_state += next_appendage
+	return ..()
 
 /obj/item/melee/oscula
 	name = "oscillating sword"

@@ -8,22 +8,20 @@ Yog Knights, Ugora Orbit Knights of Yog.
 
 /datum/voucher_set/yog_knights/daisho
 	name = "Security Daisho"
-	description = "An armoured suit for exploring harsh environments. It can be reinforced with goliath plates."
+	description = "A set of sword and baton with a dual sheath belt harness."
 	icon = 'modular_zzplurt/master_files/icons/obj/clothing/job/belts.dmi'
 	icon_state = "daisho"
 	set_items = list(
-		/obj/item/storage/belt/secdaisho,
-		/obj/item/clothing/mask/gas/explorer,
+		/obj/item/storage/belt/secdaisho/full,
 	)
 
 /datum/voucher_set/yog_knight/tanto_belt
 	name = "Standard Belt with Knife"
-	description = "A fire-proof suit for exploring hot environments. It can't be reinforced with goliath plates, but is ash storm proof."
+	description = "Your standard trustworthy belt, always reliable."
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "security"
 	set_items = list(
-		/obj/item/clothing/suit/hooded/seva,
-		/obj/item/clothing/mask/gas/seva,
+		/obj/item/storage/belt/security/full,
 	)
 
 /obj/item/melee_voucher
@@ -47,13 +45,11 @@ Yog Knights, Ugora Orbit Knights of Yog.
 		return
 	var/drop_location = drop_location()
 	switch(selection)
-		if("SEVA suit")
-			new /obj/item/clothing/suit/hooded/seva(drop_location)
-			new /obj/item/clothing/mask/gas/seva(drop_location)
-		if("Explorer suit")
-			new /obj/item/clothing/suit/hooded/explorer(drop_location)
-			new /obj/item/clothing/mask/gas/explorer(drop_location)
+		if("Security Daisho")
+			new /obj/item/storage/belt/secdaisho/ful(drop_location)
+		if("Security Belt + Tanto")
+			new /obj/item/storage/belt/security/full(drop_location)
 
-	SSblackbox.record_feedback("tally", "suit_voucher_redeemed", 1, selection)
+	SSblackbox.record_feedback("tally", "melee_voucher_redeemed", 1, selection)
 	qdel(voucher)
 
