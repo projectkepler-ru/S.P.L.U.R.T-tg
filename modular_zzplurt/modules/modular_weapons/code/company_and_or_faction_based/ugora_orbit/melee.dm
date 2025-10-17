@@ -120,10 +120,13 @@ Speaking of which, daisho are also fun :3
 		force_wielded = force_wielded, \
 		ap_wielded = ap_wielded,\
 		ap_unwielded = ap_unwielded,\
-		icon_wielded = "[icon_prefix]1", \
 		wield_callback = CALLBACK(src, PROC_REF(on_wield)), \
 		unwield_callback = CALLBACK(src, PROC_REF(on_unwield)), \
 	)
+
+/obj/item/melee/oscula/update_icon_state()
+	icon_state = inhand_icon_state = HAS_TRAIT(src, TRAIT_WIELDED) ? "secsword[HAS_TRAIT(src, TRAIT_WIELDED)]" : "secsword0"
+	return ..()
 
 /obj/item/melee/oscula/proc/on_wield(obj/item/source, mob/living/carbon/user)
 	attack_speed = CLICK_CD_MELEE
