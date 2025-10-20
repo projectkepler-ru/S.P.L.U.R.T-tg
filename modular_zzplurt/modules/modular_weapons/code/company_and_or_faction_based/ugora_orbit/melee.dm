@@ -267,14 +267,3 @@ Speaking of which, daisho are also fun :3
 /obj/item/melee/baton/jitte/additional_effects_non_cyborg(mob/living/target, mob/living/user)
 	target.set_confusion_if_lower(10 SECONDS)
 	target.set_staggered_if_lower(5 SECONDS)
-
-	SEND_SIGNAL(target, COMSIG_LIVING_MINOR_SHOCK)
-	addtimer(CALLBACK(src, PROC_REF(apply_daze_end), target), 2 SECONDS)
-
-/obj/item/melee/baton/jitte/proc/apply_daze_end(mob/living/target)
-	var/trait_check = HAS_TRAIT(target, TRAIT_BATON_RESISTANCE) //var since we check it in out to_chat as well as determine stun duration
-	if(!target.IsKnockdown())
-		to_chat(target, span_warning("Your muscles seize, making you collapse[trait_check ? ", but your body quickly recovers..." : "!"]"))
-
-	if(!trait_check)
-		target.Knockdown(knockdown_time)
