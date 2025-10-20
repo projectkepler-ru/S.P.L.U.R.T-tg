@@ -14,3 +14,11 @@
 	embed_type = /datum/embedding/energy_arrow
 
 /datum/embedding/energy_arrow
+	embed_chance = 35
+	fall_chance = 33
+	jostle_chance = 55
+	ignore_throwspeed_threshold = TRUE
+	pain_stam_pct = 1
+	pain_mult = 1
+	jostle_pain_mult = 1.5
+	rip_time = 0.3 SECONDS //Takes no time at all to remove, it's not a physical projectile.
