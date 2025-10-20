@@ -34,12 +34,12 @@ Speaking of which, daisho are also fun :3
 	atom_storage.max_total_storage = WEIGHT_CLASS_BULKY
 	atom_storage.set_holdable(list(
 		/obj/item/melee/oscula,
-		/obj/item/melee/baton/tanto,
+		/obj/item/melee/baton/jitte,
 		))
 
 /obj/item/storage/belt/secdaisho/full/PopulateContents()
 	new /obj/item/melee/oscula(src)
-	new /obj/item/melee/baton/tanto(src)
+	new /obj/item/melee/baton/jitte(src)
 	update_appearance()
 
 
@@ -104,7 +104,7 @@ Speaking of which, daisho are also fun :3
 
 /obj/item/melee/oscula
 	name = "oscillating sword"
-	desc = "An expertly crafted historical human sword once used by the Persians which has recently gained traction due to Venusian historal recreation sports. One small flaw, the Taj-based company who produces these has mistaken them for British cavalry sabres akin to those used by high ranking Nanotrasen officials. Atleast it cuts the same way!"
+	desc = "A long dull blade fielded by the Ugora regal guardian. These 'sword' are not sharp due to prohibition agaisnt armament while in vicinity of the empress."
 	icon = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/sword.dmi'
 	icon_state = "secsword0"
 	inhand_icon_state = "secsword0"
@@ -255,4 +255,26 @@ Speaking of which, daisho are also fun :3
 /datum/storage/security_belt/webbing
 	max_slots = 7
 
-/obj/item/melee/baton/tanto
+/obj/item/melee/baton/jitte
+	name = "apprehension baton"
+	desc = "A hard plastic jitte to be used in combination with your sword. Not as effective at knocking down target. But easier to swing"
+	desc_controls = "Left click to stun, right click to harm."
+	stamina_damage = 35
+	cooldown = 0.8 SECONDS
+	knockdown_time = 0 SECONDS
+
+/obj/item/melee/baton/jitte/additional_effects_non_cyborg(mob/living/target, mob/living/user)
+	target.set_jitter_if_lower(40 SECONDS)
+	target.set_confusion_if_lower(10 SECONDS)
+	target.set_stutter_if_lower(16 SECONDS)
+
+	SEND_SIGNAL(target, COMSIG_LIVING_MINOR_SHOCK)
+	addtimer(CALLBACK(src, PROC_REF(apply_stun_effect_end), target), 2 SECONDS)
+
+/obj/item/melee/baton/security/proc/apply_stun_effect_end(mob/living/target)
+	var/trait_check = HAS_TRAIT(target, TRAIT_BATON_RESISTANCE) //var since we check it in out to_chat as well as determine stun duration
+	if(!target.IsKnockdown())
+		to_chat(target, span_warning("Your muscles seize, making you collapse[trait_check ? ", but your body quickly recovers..." : "!"]"))
+
+	if(!trait_check)
+		target.Knockdown(knockdown_time)
