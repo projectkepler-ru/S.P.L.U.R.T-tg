@@ -10,7 +10,7 @@ Yog Knights, Ugora Orbit Knights of Yog.
 	name = "Security Daisho"
 	description = "A set of sword and baton with a dual sheath belt harness."
 	icon = 'modular_zzplurt/master_files/icons/obj/clothing/job/belts.dmi'
-	icon_state = "daisho"
+	icon_state = "secdaisho"
 	set_items = list(
 		/obj/item/storage/belt/secdaisho/full,
 	)
@@ -36,7 +36,7 @@ Yog Knights, Ugora Orbit Knights of Yog.
 //More items can be added in the lists and in the if statement.
 /obj/machinery/vending/security/proc/redeem_melee_voucher(obj/item/melee_voucher/voucher, mob/redeemer)
 	var/items = list(
-		"Security Daisho" = image(icon = 'modular_skyrat/master_files/icons/obj/clothing/suits.dmi', icon_state = "daisho"),
+		"Security Daisho" = image(icon = 'modular_skyrat/master_files/icons/obj/clothing/suits.dmi', icon_state = "secdaisho"),
 		"Security Belt + Tanto" = image(icon = 'icons/obj/clothing/suits/utility.dmi', icon_state = "security"),
 	)
 

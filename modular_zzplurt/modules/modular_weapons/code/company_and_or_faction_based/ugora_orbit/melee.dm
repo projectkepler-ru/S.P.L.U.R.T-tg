@@ -24,7 +24,7 @@ Speaking of which, daisho are also fun :3
 	desc = "A modified scabbard intended to hold a sword and compact baton at the same time."
 	icon = 'modular_zzplurt/master_files/icons/obj/clothing/job/belts.dmi'
 	worn_icon = 'modular_zzplurt/master_files/icons/mob/clothing/job/belt.dmi'
-	icon_state = "daisho"
+	icon_state = "secdaisho"
 	w_class = WEIGHT_CLASS_BULKY
 	interaction_flags_click = NEED_DEXTERITY
 
