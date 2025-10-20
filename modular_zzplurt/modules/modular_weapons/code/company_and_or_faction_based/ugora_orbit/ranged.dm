@@ -26,7 +26,7 @@ With help of an aussie catgirl
 	inhand_icon_state = "yato"
 	worn_icon = 'modular_skyrat/modules/modular_weapons/icons/mob/company_and_or_faction_based/ugora_orbit/guns_worn.dmi'
 	worn_icon_state = "yato"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/musket)
+	ammo_type = list(/obj/item/ammo_casing/energy/hardlight_bow)
 	/// An ID for our drop discharge timer.
 	var/drop_discharge_timerid
 
@@ -44,13 +44,15 @@ With help of an aussie catgirl
 		Before you is a weapon developed by a station that no longer exists and wielded by many faceless brave men and women, all of whom made a difference in the history of our galaxy \
 		To this day, the shadow government of Ugora Orbit has yet to be contacted by any forces, Solarian or otherwise, and only through arms trade like these were we able to get insight into their culutres.")
 
+//Please keep in mind when reading the value below
+//The bow discharge when it is not being held in hand. This is a balance measure.
 /obj/item/gun/energy/laser/energy_bow/Initialize(mapload)
 	. = ..()
 	AddComponent( \
 		/datum/component/crank_recharge, \
 		charging_cell = get_cell(), \
 		charge_amount = STANDARD_CELL_CHARGE, \
-		cooldown_time = 0.5 SECONDS, \
+		cooldown_time = 0.8 SECONDS, \
 		charge_sound = 'sound/items/weapons/gun/bow/bow_draw.ogg', \
 		charge_sound_cooldown_time = 0.5 SECONDS, \
 		charge_move = IGNORE_USER_LOC_CHANGE, \
