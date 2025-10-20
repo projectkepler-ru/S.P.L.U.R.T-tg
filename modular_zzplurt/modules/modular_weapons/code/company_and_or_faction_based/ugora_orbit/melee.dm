@@ -67,7 +67,7 @@ Speaking of which, daisho are also fun :3
 /obj/item/storage/belt/secdaisho/attack_hand_secondary(mob/user, list/modifiers)
 	if(!(user.get_slot_by_item(src) & ITEM_SLOT_BELT) && !(user.get_slot_by_item(src) & ITEM_SLOT_BACK) && !(user.get_slot_by_item(src) & ITEM_SLOT_SUITSTORE))
 		return ..()
-	for(var/obj/item/melee/baton/tanto/stored in contents)
+	for(var/obj/item/melee/baton/jitte/stored in contents)
 		user.visible_message(span_notice("[user] draws [stored] from [src]."), span_notice("You draw [stored] from [src]."))
 		user.put_in_hands(stored)
 		playsound(user, 'sound/items/sheath.ogg', 50, TRUE)
@@ -81,7 +81,7 @@ Speaking of which, daisho are also fun :3
 	for(var/obj/thing in contents)
 		if(has_baton && has_sword)
 			break
-		if(istype(thing, /obj/item/melee/baton/tanto))
+		if(istype(thing, /obj/item/melee/baton/jitte))
 			has_baton = TRUE
 		if(istype(thing, /obj/item/melee/oscula))
 			has_sword = TRUE
@@ -255,6 +255,7 @@ Speaking of which, daisho are also fun :3
 /datum/storage/security_belt/webbing
 	max_slots = 7
 
+//A baton not used for knocking down but beating people up. Or something.
 /obj/item/melee/baton/jitte
 	name = "apprehension baton"
 	desc = "A hard plastic jitte to be used in combination with your sword. Not as effective at knocking down target. But easier to swing"
@@ -269,9 +270,9 @@ Speaking of which, daisho are also fun :3
 	target.set_stutter_if_lower(16 SECONDS)
 
 	SEND_SIGNAL(target, COMSIG_LIVING_MINOR_SHOCK)
-	addtimer(CALLBACK(src, PROC_REF(apply_stun_effect_end), target), 2 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(apply_daze_end), target), 2 SECONDS)
 
-/obj/item/melee/baton/security/proc/apply_stun_effect_end(mob/living/target)
+/obj/item/melee/baton/jitte/proc/apply_daze_end(mob/living/target)
 	var/trait_check = HAS_TRAIT(target, TRAIT_BATON_RESISTANCE) //var since we check it in out to_chat as well as determine stun duration
 	if(!target.IsKnockdown())
 		to_chat(target, span_warning("Your muscles seize, making you collapse[trait_check ? ", but your body quickly recovers..." : "!"]"))
