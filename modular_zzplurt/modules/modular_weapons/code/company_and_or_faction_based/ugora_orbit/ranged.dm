@@ -17,7 +17,7 @@ With help of an aussie catgirl
 
 /obj/item/gun/energy/laser/energy_bow
 	name = "hardlight bow"
-	desc = "A modern version of the Ugoran Bow used by the Creed"
+	desc = "A modern version of the Ugoran Bow used by the Citadel"
 	base_icon_state = "yato"
 	icon = 'modular_zzplurt/modules/modular_weapons/icons/obj/company_and_or_faction_based/ugora_orbit/guns48x.dmi'
 	icon_state = "yato"
@@ -37,15 +37,16 @@ With help of an aussie catgirl
 
 /obj/item/gun/energy/laser/energy_bow/examine_more(mob/user)
 	. = ..()
-	. += span_info("The Hardlight Energy bow can be actively drawn while you're on the move but will slow you down while it is drawn. \
-		Because of this, it is advised you only use it on a defensive position rather than while chasing.")
+	. += span_info("The Hardlight Energy bow can be actively drawn while you're on the move. \
+		However, it will self-discharge if not actively being held and drawn, so you must always hold it out.")
 	. += span_notice("This weapon was primarily used by the knights protecting the Y Ark. \
 		These knights were both a form of military and policing force. \
 		Before you is a weapon developed by a station that no longer exists and wielded by many faceless brave men and women, all of whom made a difference in the history of our galaxy \
 		To this day, the shadow government of Ugora Orbit has yet to be contacted by any forces, Solarian or otherwise, and only through arms trade like these were we able to get insight into their culutres.")
 
 //Please keep in mind when reading the value below
-//The bow discharge when it is not being held in hand. This is a balance measure.
+//The bow discharge when it is not being held in hand. This is a balance measure. To keep it fair
+//As, afterall. This bow does actually embed target.
 /obj/item/gun/energy/laser/energy_bow/Initialize(mapload)
 	. = ..()
 	AddComponent( \
