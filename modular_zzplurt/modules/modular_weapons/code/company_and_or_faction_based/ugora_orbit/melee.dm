@@ -25,6 +25,8 @@ Speaking of which, daisho are also fun :3
 	icon = 'modular_zzplurt/master_files/icons/obj/clothing/job/belts.dmi'
 	worn_icon = 'modular_zzplurt/master_files/icons/mob/clothing/job/belt.dmi'
 	icon_state = "secdaisho"
+	base_icon_state = "secdaisho"
+	worn_icon_state = "secdaisho"
 	w_class = WEIGHT_CLASS_BULKY
 	interaction_flags_click = NEED_DEXTERITY
 
@@ -207,6 +209,7 @@ Speaking of which, daisho are also fun :3
 	wound_bonus = 0 //We want to avoid this being too effective at wounding out of nowhere.
 	exposed_wound_bonus = 18 //It's a slim long knife, prepare yourself.
 	armour_penetration = 30 // You should be able to use it fairly often and effectively
+	attack_speed = 12 //If you miss or whiff a hit on target, it's slow
 
 /obj/item/knife/oscu_tanto/examine_more(mob/user)
 	. = ..()
