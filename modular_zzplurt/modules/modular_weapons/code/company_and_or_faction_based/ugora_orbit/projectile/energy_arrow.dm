@@ -5,7 +5,7 @@
 /obj/projectile/energy_arrow
 	name = "energy arrow"
 	desc = "Does it even matter? whos gonna read this shit"
-	icon = 'modular_zzplurt\modules\modular_weapons\icons\obj\company_and_or_faction_based\ugora_orbit\projectile'
+	icon = 'modular_zzplurt/modules/modular_weapons/icons/obj/company_and_or_faction_based/ugora_orbit/projectile.dmi'
 	icon_state = "arrow_energy"
 	damage = 30
 	speed = 1.3

@@ -116,7 +116,7 @@ Speaking of which, daisho are also fun :3
 	force = 12
 	damtype = BURN
 	wound_bonus = 10
-	exposed_wound_bonus = -30
+	exposed_wound_bonus = -40
 	demolition_mod = 0.8
 	//I understand it's unrealistic, but I want to avoid people using the sword to break crate or locker open. Also yes this means its less effective against a lot of other thing, but we'll get there. Trust.
 	/// How much damage to do unwielded, this makes it do less than survival knife but the same as our Tanto
@@ -130,14 +130,14 @@ Speaking of which, daisho are also fun :3
 	///You cant use your other hand so we want to make sure the block chance is there to compensate for it
 	var/block_wielded = 40
 	var/block_unwielded = 25
-	/* In regards to concern on the fact that there is a difference of 6 ticks between this and any standard melee cooldown
+	/* In regards to concern on the fact that there is a difference of 4 ticks between this and any standard melee cooldown
 	/// | Refer to below for linear graph. Damage:TickRate
 	/// | [1]    [2]  [3]    [4]     	This is assuming you are hitting in strafe			   |===|
-	/// | 12:2, 24:4, 36:6, 48:8     														   |===|
+	/// | 12:4, 24:8, 36:12, 48:16     													       |===|
 	/// | 30:8, 60:16, 90:24, 120:32 														   |===|
 	/// | 12:2 * 4 = 48:8 > 30:8 = 30:8														   |===|
 	/// | Tickrate can be misleading, as standard melee tick is practically equal to a second. |===|
-		As we can see, the DPS of the Oscillating Sword vs Energy Sword is high
+		As we can see, the energy sword always win
 
 		There is a significantly lower tickrate, so each cyclic rate(Melee Hit Per Strafe) is significantly higher.
 		If you're only getting hit in every time you walk by them, then energy sword would outdamage
@@ -147,7 +147,7 @@ Speaking of which, daisho are also fun :3
 		Yes, this sword is one of the more complicated one in term of balance and it may feel oppressive
 		Due to how many feature it has and the system put in place. And I intend to address all of it one at a time.
 	*/
-	attack_speed = 5
+	attack_speed = 4
 
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
@@ -155,6 +155,11 @@ Speaking of which, daisho are also fun :3
 
 	attack_verb_continuous = list("attacks", "pokes", "jabs", "bludgeons", "hits", "bashes") //The sword is dull, not sharp
 	attack_verb_simple = list("attack", "poke", "jab", "smack", "hit", "bludgeon")
+
+/obj/item/melee/oscula/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK, damage_type = BRUTE)
+	if(attack_type == (PROJECTILE_ATTACK || LEAP_ATTACK || OVERWHELMING_ATTACK))
+		final_block_chance = 0 //Don't bring a sword to a gunfight, and also you aren't going to really block someone full body tackling you with a sword. Or a road roller, if one happened to hit you.
+	return ..()
 
 /obj/item/melee/oscula/Initialize(mapload)
 	. = ..()
@@ -176,23 +181,29 @@ Speaking of which, daisho are also fun :3
 /obj/item/melee/oscula/proc/on_wield(obj/item/source, mob/living/carbon/user)
 	attack_speed = CLICK_CD_MELEE
 	armour_penetration = ap_wielded
+	block = block_unwielded
+	force = force_wielded
+	damtype = BRUTE
 
 /obj/item/melee/oscula/proc/on_unwield(obj/item/source, mob/living/carbon/user)
-	attack_speed = 5
+	force = force_unwielded
+	attack_speed = 4
 	armour_penetration = ap_unwielded
+	block = block_unwielded
+	damtype = BURN
 
 /obj/item/knife/oscu_tanto
 	name = "\improper komuro"
 	desc = "A long thin blade commonly used by Ugoran people as ritual dagger and to finish off dying opponent. Stabbing a <b> proned </b> target will deal more damage"
 	icon = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/tanto.dmi'
 	icon_state = "tanto"
-	inhand_icon_state = "tanto"
+	inhand_icon_state = "tantohand"
 	lefthand_file = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/tanto_lefthand.dmi'
 	righthand_file = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/tanto_righthand.dmi'
 	worn_icon_state = "knife"
 	force = 10 //This is more effective when the target is laying down
 	w_class = WEIGHT_CLASS_SMALL //It's not exactly big but it's kind of long.
-	throwforce = 25 //Long Slim Throwing Knives
+	throwforce = 20 //Long Slim Throwing Knives
 	wound_bonus = 0 //We want to avoid this being too effective at wounding out of nowhere.
 	exposed_wound_bonus = 18 //It's a slim long knife, prepare yourself.
 	armour_penetration = 30 // You should be able to use it fairly often and effectively
@@ -264,11 +275,14 @@ Speaking of which, daisho are also fun :3
 //Lower hit delay and lower stamina damage. Reward certain playstyle.
 /obj/item/melee/baton/jitte
 	name = "apprehension baton"
+	icon = 'modular_zzplurt\modules\modular_weapons\icon\company_and_or_faction_based\ugora_orbit\jitte'
+	icon_state = 'jitte'
 	desc = "A hard plastic jitte to be used in combination with your sword. Not as effective at knocking down target. But easier to swing"
 	desc_controls = "Left click to stun, right click to harm."
 	stamina_damage = 35
 	cooldown = 0.8 SECONDS
 	knockdown_time = 0 SECONDS
+
 
 /obj/item/melee/baton/jitte/additional_effects_non_cyborg(mob/living/target, mob/living/user)
 	target.set_confusion_if_lower(10 SECONDS)
