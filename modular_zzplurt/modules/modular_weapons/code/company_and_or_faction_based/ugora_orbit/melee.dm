@@ -166,7 +166,7 @@ Speaking of which, daisho are also fun :3
 	AddComponent(/datum/component/two_handed, \
 		force_unwielded = force_unwielded, \
 		force_wielded = force_wielded, \
-		block = block_unwielded,\
+		block_chance = block_unwielded,\
 		block_wielded = block_wielded,\
 		ap_wielded = ap_wielded,\
 		ap_unwielded = ap_unwielded,\
@@ -181,7 +181,7 @@ Speaking of which, daisho are also fun :3
 /obj/item/melee/oscula/proc/on_wield(obj/item/source, mob/living/carbon/user)
 	attack_speed = CLICK_CD_MELEE
 	armour_penetration = ap_wielded
-	block = block_unwielded
+	block_chance = block_unwielded
 	force = force_wielded
 	damtype = BRUTE
 
@@ -189,7 +189,7 @@ Speaking of which, daisho are also fun :3
 	force = force_unwielded
 	attack_speed = 4
 	armour_penetration = ap_unwielded
-	block = block_unwielded
+	block_chance = block_unwielded
 	damtype = BURN
 
 /obj/item/knife/oscu_tanto
@@ -275,14 +275,15 @@ Speaking of which, daisho are also fun :3
 //Lower hit delay and lower stamina damage. Reward certain playstyle.
 /obj/item/melee/baton/jitte
 	name = "apprehension baton"
-	icon = 'modular_zzplurt\modules\modular_weapons\icon\company_and_or_faction_based\ugora_orbit\jitte'
+	icon = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/jitte'
+	lefthand_file = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/jitte_lefthand.dmi'
+	righthand_file = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/jitte_righthand.dmi'
 	icon_state = 'jitte'
 	desc = "A hard plastic jitte to be used in combination with your sword. Not as effective at knocking down target. But easier to swing"
 	desc_controls = "Left click to stun, right click to harm."
 	stamina_damage = 35
 	cooldown = 0.8 SECONDS
 	knockdown_time = 0 SECONDS
-
 
 /obj/item/melee/baton/jitte/additional_effects_non_cyborg(mob/living/target, mob/living/user)
 	target.set_confusion_if_lower(10 SECONDS)
