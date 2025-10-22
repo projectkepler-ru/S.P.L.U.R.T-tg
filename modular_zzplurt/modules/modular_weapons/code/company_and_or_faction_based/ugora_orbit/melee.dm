@@ -33,7 +33,7 @@ Speaking of which, daisho are also fun :3
 /obj/item/storage/belt/secdaisho/Initialize(mapload)
 	. = ..()
 	atom_storage.max_slots = 2
-	atom_storage.max_total_storage = WEIGHT_CLASS_BULKY
+	atom_storage.max_total_storage = WEIGHT_CLASS_BULKY + WEIGHT_CLASS_NORMAL
 	atom_storage.set_holdable(list(
 		/obj/item/melee/oscula,
 		/obj/item/melee/baton/jitte,
