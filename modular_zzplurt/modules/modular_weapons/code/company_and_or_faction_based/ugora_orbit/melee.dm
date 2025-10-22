@@ -125,7 +125,7 @@ Speaking of which, daisho are also fun :3
 	/// How much damage to do unwielded, this makes it do less than survival knife but the same as our Tanto
 	var/force_unwielded = 12
 	/// 20 damage is ok. It's the same as shooting a single thermal pistol at a time, when it come to raw DPS difference, this wont cut it.
-	var/force_wielded = 20
+	var/two_hand_force = 20
 	/// How much AP should this have when one handed. This make it so the sword isn't completely worthless should you have even just a bit of armour
 	var/ap_unwielded = 15
 	/// 25 is an okay number, enough to get through block chance and armour, Yes it does seems very high. but bear in mind that's very similar to most available sec ranged AP option (barring the X-Ray laser at 100% AP)
@@ -154,7 +154,7 @@ Speaking of which, daisho are also fun :3
 
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
-	sharpness = NONE
+
 
 	attack_verb_continuous = list("attacks", "pokes", "jabs", "bludgeons", "hits", "bashes") //The sword is dull, not sharp
 	attack_verb_simple = list("attack", "poke", "jab", "smack", "hit", "bludgeon")
@@ -167,8 +167,8 @@ Speaking of which, daisho are also fun :3
 /obj/item/melee/oscula/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/two_handed, \
-		force_unwielded = force_unwielded, \
-		force_wielded = force_wielded, \
+		force_unwielded = force, \
+		force_wielded = two_hand_force, \
 		block_chance = block_unwielded,\
 		block_wielded = block_wielded,\
 		ap_wielded = ap_wielded,\
@@ -181,14 +181,14 @@ Speaking of which, daisho are also fun :3
 	icon_state = inhand_icon_state = HAS_TRAIT(src, TRAIT_WIELDED) ? "secsword[HAS_TRAIT(src, TRAIT_WIELDED)]" : "secsword0"
 	return ..()
 
-/obj/item/melee/oscula/proc/on_wield(obj/item/source, mob/living/carbon/user)
+/obj/item/melee/oscula/proc/on_wield()
 	attack_speed = CLICK_CD_MELEE
 	armour_penetration = ap_wielded
 	block_chance = block_unwielded
 	force = force_wielded
 	damtype = BRUTE
 
-/obj/item/melee/oscula/proc/on_unwield(obj/item/source, mob/living/carbon/user)
+/obj/item/melee/oscula/proc/on_unwield()
 	force = force_unwielded
 	attack_speed = 4
 	armour_penetration = ap_unwielded
