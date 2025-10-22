@@ -138,7 +138,6 @@ Speaking of which, daisho are also fun :3
 	/// | [1]    [2]  [3]    [4]     	This is assuming you are hitting in strafe			   |===|
 	/// | 12:4, 24:8, 36:12, 48:16     													       |===|
 	/// | 30:8, 60:16, 90:24, 120:32 														   |===|
-	/// | 12:2 * 4 = 48:8 > 30:8 = 30:8														   |===|
 	/// | Tickrate can be misleading, as standard melee tick is practically equal to a second. |===|
 		As we can see, the energy sword always win
 
