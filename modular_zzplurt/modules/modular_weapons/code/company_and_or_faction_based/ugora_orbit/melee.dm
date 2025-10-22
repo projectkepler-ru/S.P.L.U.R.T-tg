@@ -275,7 +275,7 @@ Speaking of which, daisho are also fun :3
 //Lower hit delay and lower stamina damage. Reward certain playstyle.
 /obj/item/melee/baton/jitte
 	name = "apprehension baton"
-	icon = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/jitte'
+	icon = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/jitte.dmi'
 	lefthand_file = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/jitte_lefthand.dmi'
 	righthand_file = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/jitte_righthand.dmi'
 	icon_state = 'jitte'
