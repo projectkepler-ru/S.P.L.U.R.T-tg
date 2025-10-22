@@ -190,12 +190,12 @@ Speaking of which, daisho are also fun :3
 	lefthand_file = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/tanto_lefthand.dmi'
 	righthand_file = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/tanto_righthand.dmi'
 	worn_icon_state = "knife"
-	force = 12 //This is more effective when the target is laying down
+	force = 10 //This is more effective when the target is laying down
 	w_class = WEIGHT_CLASS_SMALL //It's not exactly big but it's kind of long.
-	throwforce = 20 //Long Slim Throwing Knives
+	throwforce = 25 //Long Slim Throwing Knives
 	wound_bonus = 0 //We want to avoid this being too effective at wounding out of nowhere.
-	exposed_wound_bonus = 15 //It's a slim long knife, prepare yourself.
-	armour_penetration = 20 // You should be able to use it fairly often and effectively
+	exposed_wound_bonus = 18 //It's a slim long knife, prepare yourself.
+	armour_penetration = 30 // You should be able to use it fairly often and effectively
 
 /obj/item/knife/oscu_tanto/examine_more(mob/user)
 	. = ..()
@@ -220,7 +220,7 @@ Speaking of which, daisho are also fun :3
 		ritual_worthy = TRUE
 
 	if(ritual_worthy)
-		MODIFY_ATTACK_FORCE_MULTIPLIER(attack_modifiers, 2.5) ///This makes it do 30 damage, still a lot but its situational enough
+		MODIFY_ATTACK_FORCE_MULTIPLIER(attack_modifiers, 3) ///This makes it do 30 damage, still a lot but its situational enough
 
 	return ..()
 
