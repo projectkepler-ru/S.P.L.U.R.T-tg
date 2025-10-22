@@ -46,7 +46,7 @@ Speaking of which, daisho are also fun :3
 
 
 //Is it really an issue if AGPL. from doppler #303 If paxil pings me not to use this then it can be altered
-//as an aside, not everything is gonna be the same anyway. People have different vision
+///Not everything is gonna be the same anyway. People have different vision
 //As of writing this I still have not been able to pull exu alter yet
 //Just one more pull and maybe I can get her
 
