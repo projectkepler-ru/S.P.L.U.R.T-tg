@@ -29,6 +29,7 @@ Speaking of which, daisho are also fun :3
 	worn_icon_state = "secdaisho"
 	w_class = WEIGHT_CLASS_BULKY
 	interaction_flags_click = NEED_DEXTERITY
+	max_specific_storage = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/belt/secdaisho/Initialize(mapload)
 	. = ..()
