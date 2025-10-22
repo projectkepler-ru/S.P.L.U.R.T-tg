@@ -281,7 +281,8 @@ Speaking of which, daisho are also fun :3
 	icon = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/jitte.dmi'
 	lefthand_file = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/jitte_lefthand.dmi'
 	righthand_file = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/jitte_righthand.dmi'
-	icon_state = 'jitte'
+	icon_state = "jitte"
+	inhand_icon_state = "jitte"
 	desc = "A hard plastic jitte to be used in combination with your sword. Not as effective at knocking down target. But easier to swing"
 	desc_controls = "Left click to stun, right click to harm."
 	stamina_damage = 35 //4 hit down. A significant reduction compared to other options
