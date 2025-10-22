@@ -105,6 +105,7 @@ Speaking of which, daisho are also fun :3
 /obj/item/melee/oscula
 	name = "oscillating sword"
 	desc = "A long dull blade fielded by the Ugora regal guardian. These 'sword' are not sharp due to prohibition agaisnt armament while in vicinity of the empress."
+	desc_controls = "This sword attack faster but weaker while unwielded. Use in hand to wield for more damage"
 	icon = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/sword.dmi'
 	icon_state = "secsword0"
 	inhand_icon_state = "secsword0"
@@ -126,6 +127,9 @@ Speaking of which, daisho are also fun :3
 	var/ap_unwielded = 15
 	/// 25 is an okay number, enough to get through block chance and armour, Yes it does seems very high. but bear in mind that's very similar to most available sec ranged AP option (barring the X-Ray laser at 100% AP)
 	var/ap_wielded = 25
+	///You cant use your other hand so we want to make sure the block chance is there to compensate for it
+	var/block_wielded = 40
+	var/block_unwielded = 25
 	/* In regards to concern on the fact that there is a difference of 6 ticks between this and any standard melee cooldown
 	/// | Refer to below for linear graph. Damage:TickRate
 	/// | [1]    [2]  [3]    [4]     	This is assuming you are hitting in strafe			   |===|
@@ -137,13 +141,13 @@ Speaking of which, daisho are also fun :3
 
 		There is a significantly lower tickrate, so each cyclic rate(Melee Hit Per Strafe) is significantly higher.
 		If you're only getting hit in every time you walk by them, then energy sword would outdamage
-		This means the energy sword has the upperhand because 2 hit would already be severe for your limbs
+		This means the energy sword has the upperhand because 3 hit is almost certainly going to slow you down to crawl
 
 		The sword has a lower overall damage and does not deal brute wound (no bleed out) on the fast mode
 		Yes, this sword is one of the more complicated one in term of balance and it may feel oppressive
 		Due to how many feature it has and the system put in place. And I intend to address all of it one at a time.
 	*/
-	attack_speed = CLICK_CD_RAPID
+	attack_speed = 5
 
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
@@ -157,6 +161,8 @@ Speaking of which, daisho are also fun :3
 	AddComponent(/datum/component/two_handed, \
 		force_unwielded = force_unwielded, \
 		force_wielded = force_wielded, \
+		block = block_unwielded,\
+		block_wielded = block_wielded,\
 		ap_wielded = ap_wielded,\
 		ap_unwielded = ap_unwielded,\
 		wield_callback = CALLBACK(src, PROC_REF(on_wield)), \
@@ -172,7 +178,7 @@ Speaking of which, daisho are also fun :3
 	armour_penetration = ap_wielded
 
 /obj/item/melee/oscula/proc/on_unwield(obj/item/source, mob/living/carbon/user)
-	attack_speed = CLICK_CD_RAPID
+	attack_speed = 5
 	armour_penetration = ap_unwielded
 
 /obj/item/knife/oscu_tanto
@@ -218,7 +224,6 @@ Speaking of which, daisho are also fun :3
 
 	return ..()
 
-
 /datum/storage/security_belt
 	max_slots = 6
 
@@ -256,6 +261,7 @@ Speaking of which, daisho are also fun :3
 	max_slots = 7
 
 //A baton not used for knocking down but beating people up. Or something.
+//Lower hit delay and lower stamina damage. Reward certain playstyle.
 /obj/item/melee/baton/jitte
 	name = "apprehension baton"
 	desc = "A hard plastic jitte to be used in combination with your sword. Not as effective at knocking down target. But easier to swing"
