@@ -184,9 +184,8 @@ Speaking of which, daisho are also fun :3
 	attack_speed = CLICK_CD_MELEE
 	armour_penetration = ap_wielded
 	block_chance = block_unwielded
-	force = force_wielded
+	force = two_hand_force
 	damtype = BRUTE
-	return COMPONENT_TWOHANDED_BLOCK_WIELD
 
 /obj/item/melee/oscula/proc/on_unwield()
 	force = force_unwielded
