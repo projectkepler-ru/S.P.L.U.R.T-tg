@@ -131,6 +131,7 @@ Speaking of which, daisho are also fun :3
 	///You cant use your other hand so we want to make sure the block chance is there to compensate for it
 	var/block_wielded = 40
 	var/block_unwielded = 25
+	var/active = FALSE
 	/* In regards to concern on the fact that there is a difference of 4 ticks between this and any standard melee cooldown
 	/// | Refer to below for linear graph. Damage:TickRate
 	/// | [1]    [2]  [3]    [4]     	This is assuming you are hitting in strafe			   |===|
@@ -181,12 +182,14 @@ Speaking of which, daisho are also fun :3
 	block_chance = block_unwielded
 	force = two_hand_force
 	damtype = BRUTE
+	active = TRUE
 
 /obj/item/melee/oscula/proc/on_unwield()
 	force = force_unwielded
 	attack_speed = 4
 	block_chance = block_unwielded
 	damtype = BURN
+	active = FALSE
 
 /obj/item/knife/oscu_tanto
 	name = "\improper komuro"
