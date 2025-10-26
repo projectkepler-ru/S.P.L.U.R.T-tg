@@ -120,6 +120,8 @@ Speaking of which, daisho are also fun :3
 	damtype = BURN
 	wound_bonus = 10
 	exposed_wound_bonus = -40
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
 	demolition_mod = 0.8
 	//I understand it's unrealistic, but I want to avoid people using the sword to break crate or locker open. Also yes this means its less effective against a lot of other thing, but we'll get there. Trust.
 	/// How much damage to do unwielded, this makes it do less than survival knife but the same as our Tanto
