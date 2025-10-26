@@ -141,7 +141,7 @@ Speaking of which, daisho are also fun :3
 	/// | Tickrate can be misleading, as standard melee tick is practically equal to a second. |===|
 		As we can see, the energy sword always win
 
-		There is a significantly lower tickrate, so each cyclic rate(Melee Hit Per Strafe) is significantly higher.
+		There is a significantly lower tickrate, so each cyclic rate(Melee Damage Per Strafe) is significantly higher.
 		If you're only getting hit in every time you walk by them, then energy sword would outdamage
 		This means the energy sword has the upperhand because 3 hit is almost certainly going to slow you down to crawl
 
@@ -186,6 +186,7 @@ Speaking of which, daisho are also fun :3
 	block_chance = block_unwielded
 	force = force_wielded
 	damtype = BRUTE
+	return COMPONENT_TWOHANDED_BLOCK_WIELD
 
 /obj/item/melee/oscula/proc/on_unwield()
 	force = force_unwielded
