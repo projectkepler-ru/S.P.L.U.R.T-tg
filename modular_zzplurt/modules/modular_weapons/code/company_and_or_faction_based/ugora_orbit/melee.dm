@@ -115,7 +115,7 @@ Speaking of which, daisho are also fun :3
 	lefthand_file = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/sword_lefthand.dmi'
 	righthand_file = 'modular_zzplurt/modules/modular_weapons/icon/company_and_or_faction_based/ugora_orbit/sword_righthand.dmi'
 	block_chance = 25
-	armour_penetration = 15
+	armour_penetration = 25 //Yes we actually tested this. Even in best case scenario it still takes 8 hit to down. We have too low of a base damage to be an issue
 	force = 12
 	damtype = BURN
 	wound_bonus = 10
@@ -128,10 +128,6 @@ Speaking of which, daisho are also fun :3
 	var/force_unwielded = 12
 	/// 20 damage is ok. It's the same as shooting a single thermal pistol at a time, when it come to raw DPS difference, this wont cut it.
 	var/two_hand_force = 20
-	/// How much AP should this have when one handed. This make it so the sword isn't completely worthless should you have even just a bit of armour
-	var/ap_unwielded = 15
-	/// 25 is an okay number, enough to get through block chance and armour, Yes it does seems very high. but bear in mind that's very similar to most available sec ranged AP option (barring the X-Ray laser at 100% AP)
-	var/ap_wielded = 25
 	///You cant use your other hand so we want to make sure the block chance is there to compensate for it
 	var/block_wielded = 40
 	var/block_unwielded = 25
@@ -151,7 +147,7 @@ Speaking of which, daisho are also fun :3
 		Yes, this sword is one of the more complicated one in term of balance and it may feel oppressive
 		Due to how many feature it has and the system put in place. And I intend to address all of it one at a time.
 	*/
-	attack_speed = 4
+	attack_speed = 4 //No, it takes way too damn long with 12 damage to even down a normal threat. I guarantee you this is not an issue
 
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
@@ -168,8 +164,8 @@ Speaking of which, daisho are also fun :3
 /obj/item/melee/oscula/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/two_handed, \
-		force_unwielded = force, \
-		force_wielded = two_hand_force, \
+		force_unwielded = 12, \
+		force_wielded = 20, \
 		block_chance = block_unwielded,\
 		block_wielded = block_wielded,\
 		ap_wielded = ap_wielded,\
@@ -184,7 +180,6 @@ Speaking of which, daisho are also fun :3
 
 /obj/item/melee/oscula/proc/on_wield()
 	attack_speed = CLICK_CD_MELEE
-	armour_penetration = ap_wielded
 	block_chance = block_unwielded
 	force = two_hand_force
 	damtype = BRUTE
@@ -192,7 +187,6 @@ Speaking of which, daisho are also fun :3
 /obj/item/melee/oscula/proc/on_unwield()
 	force = force_unwielded
 	attack_speed = 4
-	armour_penetration = ap_unwielded
 	block_chance = block_unwielded
 	damtype = BURN
 
@@ -210,7 +204,7 @@ Speaking of which, daisho are also fun :3
 	throwforce = 20 //Long Slim Throwing Knives
 	wound_bonus = 0 //We want to avoid this being too effective at wounding out of nowhere.
 	exposed_wound_bonus = 18 //It's a slim long knife, prepare yourself.
-	armour_penetration = 30 // You should be able to use it fairly often and effectively against most threat
+	armour_penetration = 35 // You should be able to use it fairly often and effectively against most threat. A succesful backstab is rewarding
 	attack_speed = 12 //If you miss or whiff a hit on target, it's slow
 
 /obj/item/knife/oscu_tanto/examine_more(mob/user)
