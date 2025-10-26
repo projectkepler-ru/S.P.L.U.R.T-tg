@@ -168,8 +168,6 @@ Speaking of which, daisho are also fun :3
 		force_wielded = 20, \
 		block_chance = block_unwielded,\
 		block_wielded = block_wielded,\
-		ap_wielded = ap_wielded,\
-		ap_unwielded = ap_unwielded,\
 		wield_callback = CALLBACK(src, PROC_REF(on_wield)), \
 		unwield_callback = CALLBACK(src, PROC_REF(on_unwield)), \
 	)
