@@ -10,15 +10,16 @@ With help of an aussie catgirl
 /datum/supply_pack/security/armory/sechardbow
 	name = "Ugora Orbit Hardlight Bow"
 	desc = "A three pack of hardlight energy bow, manually charged with by pulling back the string, virtually limitless ammunition."
-	cost = CARGO_CRATE_VALUE * 22
+	cost = CARGO_CRATE_VALUE * 25
 	contains = list(/obj/item/gun/energy/laser/energy_bow = 3)
 	crate_name = "hardlight energy bow"
-
 
 /obj/item/gun/energy/laser/energy_bow
 	name = "hardlight bow"
 	desc = "A modern version of the Ugoran Bow used by the Citadel"
 	icon = 'modular_zzplurt/modules/modular_weapons/icons/obj/company_and_or_faction_based/ugora_orbit/guns48x.dmi'
+
+	shaded_charge = FALSE
 
 	icon_state = "yato"
 	inhand_icon_state = "yato"

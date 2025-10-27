@@ -167,8 +167,6 @@ Speaking of which, daisho are also fun :3
 	AddComponent(/datum/component/two_handed, \
 		force_unwielded = 12, \
 		force_wielded = 20, \
-		block_chance = block_unwielded,\
-		block_wielded = block_wielded,\
 		wield_callback = CALLBACK(src, PROC_REF(on_wield)), \
 		unwield_callback = CALLBACK(src, PROC_REF(on_unwield)), \
 	)
@@ -180,12 +178,10 @@ Speaking of which, daisho are also fun :3
 /obj/item/melee/oscula/proc/on_wield()
 	attack_speed = CLICK_CD_MELEE
 	block_chance = block_unwielded
-	force = two_hand_force
 	damtype = BRUTE
 	active = TRUE
 
 /obj/item/melee/oscula/proc/on_unwield()
-	force = force_unwielded
 	attack_speed = 4
 	block_chance = block_unwielded
 	damtype = BURN
