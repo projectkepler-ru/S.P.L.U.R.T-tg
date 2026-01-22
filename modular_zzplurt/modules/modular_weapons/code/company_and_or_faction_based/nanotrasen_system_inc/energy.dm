@@ -1,7 +1,7 @@
 /obj/item/gun/energy/laser/assault/splurt //because we might change our mind on things later. So I wnat to keep this modular aswell.
 	name = "\improper assault laser rifle"
 	desc = "The Type 5 Heat Delivery System Assault Variant, developed by Nanotrasen. The workhorse of Nanotrasen's security forces and paramilitary organizations."
-	icon = 'icons/obj/weapons/guns/wide_guns.dmi'
+	icon = 'modular_zzplurt/modules/modular_weapons/icons/obj/company_and_or_faction_based/nanotrasen_system_inc/guns48x.dmi'
 	icon_state = "assault_laser"
 	inhand_icon_state = "assault_laser"
 	worn_icon_state = "assault_laser"
