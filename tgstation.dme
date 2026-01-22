@@ -10619,6 +10619,7 @@
 #include "modular_zzplurt\code\modules\vetted\vetted.dm"
 #include "modular_zzplurt\code\modules\wiremod\core\integrated_circuit.dm"
 #include "modular_zzplurt\maps\offstation\seedvault.dm"
+#include "modular_zzplurt\modules\modular_weapons\code\company_and_or_faction_based\nanotrasen_system_inc\energy.dm"
 #include "modular_zzplurt\modules\Nanotrasen_Stuff\radio.dm"
 #include "modular_zzplurt\modules\Nanotrasen_Stuff\Nanotrasen_blueshield\clothes.dm"
 #include "modular_zzplurt\modules\Nanotrasen_Stuff\Nanotrasen_consultant\new_nanotrasen_consultant.dm"
