@@ -2,14 +2,15 @@
 	name = "\improper assault laser rifle"
 	desc = "The Type 5 Heat Delivery System Assault Variant, developed by Nanotrasen. The workhorse of Nanotrasen's security forces and paramilitary organizations."
 	icon = 'modular_zzplurt/modules/modular_weapons/icons/obj/company_and_or_faction_based/nanotrasen_system_inc/guns48x.dmi'
-	icon_state = "assault_laser"
+
 	inhand_icon_state = "assault_laser"
 	worn_icon_state = "assault_laser"
-	slot_flags = ITEM_SLOT_BACK
+
 	burst_size = 2
-	fire_delay = 1
-	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/assault)
+	fire_delay = 2
+	ammo_type = list(/obj/item/ammo_casing/energy/lasergun/assault) //Keep this here so we can edit it :)
 	emp_resistance = 2
 	weapon_weight = WEAPON_HEAVY
 	projectile_speed_multiplier = 1.5
-	SET_BASE_PIXEL(-8, 0)
+
+//Stats are similar-ish
