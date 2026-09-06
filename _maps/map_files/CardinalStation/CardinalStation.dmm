@@ -106774,17 +106774,15 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/security/telescreen/isolation/directional/north{
-	pixel_x = 7
-	},
+/obj/machinery/computer/security/telescreen/isolation/directional/north,
 /obj/machinery/light/directional/north,
 /obj/machinery/button/door/directional/north{
 	id = "IsolationCell";
 	name = "Cell Door Lock";
 	normaldoorcontrol = 1;
 	specialfunctions = 4;
-	pixel_x = -9;
-	pixel_y = 30
+	pixel_x = 15;
+	pixel_y = 31
 	},
 /turf/open/floor/iron/dark,
 /area/station/security/prison/rec)
