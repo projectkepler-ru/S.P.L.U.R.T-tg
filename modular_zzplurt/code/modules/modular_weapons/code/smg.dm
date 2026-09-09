@@ -61,7 +61,6 @@
 	var/secondary_magazine_type
 	/// The secondary magazine
 	var/obj/item/ammo_box/magazine/secondary_magazine
-	custom_materials = list(/datum/material/plastic = SHEET_MATERIAL_AMOUNT * 30, /datum/material/iron = SHEET_MATERIAL_AMOUNT * 15, /datum/material/titanium = SHEET_MATERIAL_AMOUNT * 10)
 //Gunshot is taken from this  https://github.com/ParadiseSS13/Paradise/tree/master/sound/weapons/gunshots#gunshot_rifle.ogg
 //However, I could not find who it was attributed to or where it comes from
 
@@ -199,6 +198,7 @@
 
 /obj/item/gun/ballistic/automatic/wt458/nomag
 	spawnwithmagazine = FALSE
+	custom_materials = list(/datum/material/plastic = SHEET_MATERIAL_AMOUNT * 30, /datum/material/iron = SHEET_MATERIAL_AMOUNT * 15, /datum/material/titanium = SHEET_MATERIAL_AMOUNT * 10)
 
 //Overridden Bubber SMG Here
 //It is pretty good though why was the spread on it non-existent for a gun that is supposedly meant to be harder to control?
