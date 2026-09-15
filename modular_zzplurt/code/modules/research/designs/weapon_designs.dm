@@ -71,7 +71,7 @@
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
-
+/* Not sorry sappho, you've done far worse to me
 /datum/design/m9mm_sec_rubber
 	name = "Magazine (9x25mm Murphy Rubber) (Less-Lethal)"
 	desc = "Designed to slide in and out of a 9mm 'Murphy' service pistol. This magazine is loaded with rubber rounds for non-lethal takedowns."
@@ -82,6 +82,81 @@
 		/datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 3,
 	)
 	build_path = /obj/item/ammo_box/magazine/security/rubber
+	category = list(
+		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
+*/
+
+/datum/design/m9x17mm_pmag
+	name = "9x17mm Handgun Magazine (Lethal)"
+	desc = "A standard magazine for all 9mm security pistol, holds 17 rounds of 9x17mm."
+	id = "m9x17mm_mag"
+	build_type = PROTOLATHE | AWAY_LATHE
+	materials = list(
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 6, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 4
+	)
+	build_path = /obj/item/ammo_box/magazine/mps5
+	category = list(
+		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
+
+/datum/design/m9x17mm_pmag_rubber
+	name = "9x17mm Rubber Handgun Magazine (Less-Lethal)"
+	desc = "A standard magazine for all 9mm security pistol, holds 17 rounds of 9x17mm, this one is full of rubber-capped bullets \
+	For use of disabling targets, while also breaking a few ribs. For those officers who have no issue with lawsuits."
+	id = "m9x17mm_mag_rubber"
+	build_type = PROTOLATHE | AWAY_LATHE
+	materials = list(
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 6, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 12
+	)
+	build_path = /obj/item/ammo_box/magazine/mps5/rubber
+	category = list(
+		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
+
+/datum/design/m9x17mm_pmag_ihdf
+	name = "9x17mm Intelligent Dispersal Foam MP-S5 Magazine (Non-Lethal)"
+	desc = "A standard magazine for all 9mm security pistol, holds 17 rounds of 9x17mm, this one is full of advanced bullets full of \
+	foam-capped bullets that expand the foam on impact, making the impact padded, however hitting them like a beanbag, knocking the air out of them."
+	id = "m9x17mm_mag_ihdf"
+	build_type = PROTOLATHE | AWAY_LATHE
+	materials = list(
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 4, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 8
+	)
+	build_path = /obj/item/ammo_box/magazine/mps5/ihdf
+	category = list(
+		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
+
+/datum/design/m9x17mm_pmag_hp
+	name = "9x17mm Hollow-Point MP-S5 Magazine (Very Lethal)"
+	desc = "A standard magazine for all 9mm security pistol, holds 17 rounds of 9x17mm, this one is full of bullets meant to shred unarmored personnel \
+	better, NOT advised for security brutality!"
+	id = "m9x17mm_mag_hp"
+	build_type = PROTOLATHE | AWAY_LATHE
+	materials = list(
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 12, /datum/material/silver = HALF_SHEET_MATERIAL_AMOUNT * 6, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 8
+	)
+	build_path = /obj/item/ammo_box/magazine/mps5/hp
+	category = list(
+		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
+
+/datum/design/m9x17mm_pmag_ap
+	name = "9x17mm Armor Piercing MP-S5 Magazine (Lethal)"
+	desc = "A standard magazine for all 9mm security pistol, holds 17 rounds of 9x17mm, this one is full of bullets that are meant for armored targets, \
+	as they ignore as much armor of the target as it can, shredding right through. Nearly useless against unarmored targets though."
+	id = "m9x17mm_mag_ap"
+	build_type = PROTOLATHE | AWAY_LATHE
+	materials = list(
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 8, /datum/material/titanium = SHEET_MATERIAL_AMOUNT * 8, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 8
+	)
+	build_path = /obj/item/ammo_box/magazine/mps5/ap
 	category = list(
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)
