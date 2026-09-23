@@ -155,6 +155,19 @@
 	max_ammo = 18
 	multitype = FALSE
 
+// .45 RT
+/obj/item/ammo_casing/c45rt
+	name = ".45 Romulus Technology"
+	desc = "A small rimmed cartridge intended for usage in revolvers."
+	icon_state = "223-casing"
+	caliber = CALIBER_68MM
+	projectile_type = /obj/projectile/bullet/c45rt
+
+/obj/projectile/bullet/c45rt
+	name = "6.8mm caseless bullet"
+	damage = 27
+	wound_bonus = -15
+
 //WT550 4.6x30mm Override
 /obj/projectile/bullet/c46x30mm
 	wound_bonus = 0
