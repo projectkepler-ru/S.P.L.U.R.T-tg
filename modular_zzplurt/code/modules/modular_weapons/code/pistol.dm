@@ -18,7 +18,9 @@
 		light_overlay = "flight", \
 		overlay_x = 2, \
 		overlay_y = 5)
-
+//While not everyone is guilty, many of us stood by and watched, letting these bad things happen
+//Any doubts perhaps? a whimper? Plentiful, but the changes that got us where we are today weren't good changes
+//Nor were they made all by good people
 /obj/item/gun/ballistic/automatic/pistol/sec_glock
 	name = "\improper 'Ladon' Security Pistol"
 	desc = "A well built all rounder standard sidearm of NanoTrasen station security force chambered in 9x17mm. It comes with a revolutionary quick-reload system."
@@ -26,5 +28,5 @@
 	icon_state = "ladon"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/security
 	fire_sound = 'modular_zubbers/sound/weapons/gun/lock/shot.ogg'
-	fire_delay = 3 //I should note that during testing the gun could honest to god have it's fire delay as low as 0 and it would still not be kinda eh
+	fire_delay = 3 //I should note that during testing the gun could honest to god have it's fire delay as low as 0 and it would still not be kinda eh, but the starch differences now is that this is atleast something you could viably pull out in an emergency or dualwield for more damage
 	burst_delay = 0
