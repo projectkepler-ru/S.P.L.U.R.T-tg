@@ -139,6 +139,22 @@
 	sharpness = NONE
 	embed_type = null
 
+// Bubber Related Ammo Override
+/obj/item/ammo_casing/c9x17mm/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", atom/fired_from)
+	if(istype(fired_from, /obj/item/gun/ballistic/automatic/pistol/sec_glock/smart))
+		QDEL_NULL(loaded_projectile)
+		loaded_projectile = new /obj/projectile/bullet/security/smart(src)
+	return ..()
+
+/obj/item/ammo_box/magazine/security
+	name = "handgun magazine (9x17mm)"
+	ammo_type = /obj/item/ammo_casing/c9x17mm
+	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprite_use_base = TRUE
+	caliber = CALIBER_9X17MM
+	max_ammo = 18
+	multitype = FALSE
+
 //WT550 4.6x30mm Override
 /obj/projectile/bullet/c46x30mm
 	wound_bonus = 0
