@@ -146,6 +146,9 @@
 		loaded_projectile = new /obj/projectile/bullet/security/smart(src)
 	return ..()
 
+/obj/item/ammo_box/magazine/internal/cylinder/sec45rt
+	caliber = CALIBER_9X17MM
+
 /obj/item/ammo_box/magazine/security
 	name = "handgun magazine (9x17mm)"
 	ammo_type = /obj/item/ammo_casing/c9x17mm
@@ -160,13 +163,21 @@
 	name = ".45 Romulus Technology"
 	desc = "A small rimmed cartridge intended for usage in revolvers."
 	icon_state = "223-casing"
-	caliber = CALIBER_68MM
+	caliber = CALIBER_45RT
 	projectile_type = /obj/projectile/bullet/c45rt
 
 /obj/projectile/bullet/c45rt
-	name = "heavy revolver bullet"
+	name = "heavy .45 revolver bullet"
 	damage = 28
 	wound_bonus = -25
+	stamina = 8
+
+/obj/projectile/bullet/c45rt/hv
+	name = "high velocity .45 revolver bullet"
+	damage = 22
+	armour_penetration = 25
+	speed = 1.6
+	stamina = 0
 
 //WT550 4.6x30mm Override
 /obj/projectile/bullet/c46x30mm

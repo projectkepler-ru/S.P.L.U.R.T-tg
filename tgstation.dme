@@ -11239,6 +11239,7 @@
 #include "modular_zzplurt\code\modules\resize\smallsprite_action.dm"
 #include "modular_zzplurt\code\modules\sec_haul\code\corrections_officer_jacket.dm"
 #include "modular_zzplurt\code\modules\sec_haul\code\guncrafting.dm"
+#include "modular_zzplurt\code\modules\sec_haul\code\voucher.dm"
 #include "modular_zzplurt\code\modules\sec_haul\code\guns\armory_spawns_overrides.dm"
 #include "modular_zzplurt\code\modules\sec_haul\code\technode\all_nodes.dm"
 #include "modular_zzplurt\code\modules\secborg\comms_console_secborg.dm"

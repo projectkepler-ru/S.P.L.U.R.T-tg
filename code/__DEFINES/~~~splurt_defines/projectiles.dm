@@ -3,3 +3,5 @@
 
 // Bulwark AR caliber, basically lesser .223
 #define CALIBER_68MM "6.8mm Caseless"
+
+#define CALIBER_45RT ".45 Romulus Technology" //Used by the reworked protector revolver

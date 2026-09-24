@@ -4,8 +4,10 @@
 	icon = 'modular_zzplurt/icons/obj/weapons/guns/ballistic_40x32.dmi'
 	fire_delay = 8 //Because with the rework its actually pretty dangerous now. This is equal to a shotgun fire delay, which is a pretty close analogue to what we're working with
 	icon_state = "rhino" //Sorry Niim but the signalis reference must not be forgotten
-	projectile_damage_multiplier = 1.5 //Let us get pretty close to 25
 	fire_sound = 'modular_zzplurt/sound/items/weapons/gun/gunshot_strong.ogg'
+	w_class = WEIGHT_CLASS_NORMAL
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/cylinder/sec45rt
+
 //Taken from https://github.com/ParadiseSS13/Paradise/blob/51e176654c3d86d61707689c9ab218edd36153c3/sound/weapons/gunshots/gunshot_strong.ogg
 //No attribution available for authorship
 
