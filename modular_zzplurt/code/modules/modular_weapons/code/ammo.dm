@@ -164,9 +164,9 @@
 	projectile_type = /obj/projectile/bullet/c45rt
 
 /obj/projectile/bullet/c45rt
-	name = "6.8mm caseless bullet"
-	damage = 27
-	wound_bonus = -15
+	name = "heavy revolver bullet"
+	damage = 28
+	wound_bonus = -25
 
 //WT550 4.6x30mm Override
 /obj/projectile/bullet/c46x30mm
