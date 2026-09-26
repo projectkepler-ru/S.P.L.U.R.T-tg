@@ -58,9 +58,9 @@
 	var/spawn_path
 	switch(selection)
 		if("Commander's Sabre Replica")
-			spawn_path = /obj/item/storage/belt/sheath/sabre/ntc_commander
+			spawn_path = /obj/item/storage/toolbox/guncase/skyrat/pistol/security/splurt/ladon
 		if("Admiral's Sabre Replica")
-			spawn_path = /obj/item/storage/belt/sheath/sabre/ntc_admiral
+			spawn_path = /obj/item/storage/toolbox/guncase/skyrat/pistol/security/splurt/protector
 		if("Miniature Energy Gun")
 			spawn_path = /obj/item/gun/energy/e_gun/mini
 		if("The Verdict")
@@ -101,4 +101,3 @@
 	name = "protector gunset"
 
 	weapon_to_spawn = /obj/item/gun/ballistic/revolver/protector_revolver
-	extra_to_spawn = /obj/item/ammo_box/magazine/security
