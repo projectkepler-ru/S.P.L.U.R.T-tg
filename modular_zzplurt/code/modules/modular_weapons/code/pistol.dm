@@ -32,3 +32,4 @@
 	fire_sound = 'modular_zubbers/sound/weapons/gun/lock/shot.ogg'
 	fire_delay = 3 //I should note that during testing the gun could honest to god have it's fire delay as low as 0 and it would still not be kinda eh, but the starch differences now is that this is atleast something you could viably pull out in an emergency or dualwield for more damage
 	burst_delay = 0
+	suppressor_x_offset = 5
