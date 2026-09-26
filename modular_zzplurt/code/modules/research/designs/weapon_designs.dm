@@ -71,22 +71,6 @@
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
-/* Not sorry sappho, you've done far worse to me
-/datum/design/m9mm_sec_rubber
-	name = "Magazine (9x25mm Murphy Rubber) (Less-Lethal)"
-	desc = "Designed to slide in and out of a 9mm 'Murphy' service pistol. This magazine is loaded with rubber rounds for non-lethal takedowns."
-	id = "m9mm_sec_rubber"
-	build_type = PROTOLATHE | AWAY_LATHE
-	materials = list(
-		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 10,
-		/datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 3,
-	)
-	build_path = /obj/item/ammo_box/magazine/security/rubber
-	category = list(
-		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
-	)
-	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
-*/
 
 // Handgun Magazine starts hereeeeee!
 //Yes this does mean overall we're doing less damage  per magazine. However part of the necesscitie for this changge is that it makes the handgun more solid all rounder rather than something you throw away.
@@ -99,7 +83,7 @@
 	materials = list(
 		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 4, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 3
 	)
-	build_path = /obj/item/ammo_box/magazine/mps5
+	build_path = /obj/item/ammo_box/magazine/security
 	category = list(
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)
@@ -114,7 +98,7 @@
 	materials = list(
 		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 2, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 3
 	)
-	build_path = /obj/item/ammo_box/magazine/mps5/rubber
+	build_path = /obj/item/ammo_box/magazine/security/rubber
 	category = list(
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)
@@ -129,7 +113,7 @@
 	materials = list(
 		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 4, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 1
 	)
-	build_path = /obj/item/ammo_box/magazine/mps5/ihdf
+	build_path = /obj/item/ammo_box/magazine/security/ihdf
 	category = list(
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)
@@ -144,7 +128,7 @@
 	materials = list(
 		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 6, /datum/material/silver = HALF_SHEET_MATERIAL_AMOUNT * 6, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 4
 	)
-	build_path = /obj/item/ammo_box/magazine/mps5/hp
+	build_path = /obj/item/ammo_box/magazine/security/hp
 	category = list(
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)
@@ -159,7 +143,7 @@
 	materials = list(
 		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 4, /datum/material/titanium = SHEET_MATERIAL_AMOUNT * 4, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 6
 	)
-	build_path = /obj/item/ammo_box/magazine/mps5/ap
+	build_path = /obj/item/ammo_box/magazine/security/ap
 	category = list(
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)

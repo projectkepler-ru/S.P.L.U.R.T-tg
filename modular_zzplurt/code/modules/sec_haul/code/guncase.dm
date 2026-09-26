@@ -1,6 +1,6 @@
 /obj/item/splurtweaponspawner_case
-	name = "debug weapon case"
-	desc = "How did you get this?"
+	name = "security sidearm case"
+	desc = "contains your standard issue lethal security armament to be carried at all time. Use in hand to assemble"
 	icon = 'modular_zzplurt/icons/obj/weapons/sec_haul/gun_case.dmi'
 	icon_state = "secsidearm"
 	worn_icon = 'modular_skyrat/modules/modular_weapons/icons/mob/worn/cases.dmi'
