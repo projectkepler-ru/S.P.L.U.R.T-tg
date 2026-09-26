@@ -85,13 +85,20 @@
 		return FALSE
 	return TRUE
 
-/obj/item/storage/toolbox/guncase/skyrat/pistol/security
-	name = "ladon gunset"
+/obj/item/storage/toolbox/guncase/skyrat/pistol/security/splurt
+	name = "generic gunset"
+	desc = "You should not be seeing this!"
 	icon = 'modular_zzplurt/icons/obj/weapons/sec_haul/gun_case.dmi'
 	icon_state = "secsidearm"
 
-/obj/item/storage/toolbox/guncase/skyrat/pistol/security/ladon
+/obj/item/storage/toolbox/guncase/skyrat/pistol/security/splurt/ladon
 	name = "ladon gunset"
 
 	weapon_to_spawn = /obj/item/gun/ballistic/automatic/pistol/sec_glock
+	extra_to_spawn = /obj/item/ammo_box/magazine/security
+
+/obj/item/storage/toolbox/guncase/skyrat/pistol/security/splurt/protector
+	name = "protector gunset"
+
+	weapon_to_spawn = /obj/item/gun/ballistic/revolver/protector_revolver
 	extra_to_spawn = /obj/item/ammo_box/magazine/security
