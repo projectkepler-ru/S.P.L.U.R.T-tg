@@ -85,10 +85,13 @@
 		return FALSE
 	return TRUE
 
-/obj/item/storage/toolbox/guncase/skyrat/pistol/trappiste_small_case/wespe
+/obj/item/storage/toolbox/guncase/skyrat/pistol/security
 	name = "ladon gunset"
 	icon = 'modular_zzplurt/icons/obj/weapons/sec_haul/gun_case.dmi'
 	icon_state = "secsidearm"
 
-	weapon_to_spawn = /obj/item/gun/ballistic/automatic/pistol/sol/no_mag
-	extra_to_spawn = /obj/item/ammo_box/magazine/c35sol_pistol/starts_empty
+/obj/item/storage/toolbox/guncase/skyrat/pistol/security/ladon
+	name = "ladon gunset"
+
+	weapon_to_spawn = /obj/item/gun/ballistic/automatic/pistol/sec_glock
+	extra_to_spawn = /obj/item/ammo_box/magazine/security
