@@ -40,7 +40,7 @@
 		lasgun_option.image = image(icon = 'icons/obj/weapons/guns/energy.dmi', icon_state = "mini")
 		lasgun_option.info = span_boldnotice("Nanotrasen In-house production! a laser pistol with non-removable cell holding 10 shot, weaker than its full sized counterpart but faster to recharge, comes with a holster that can hold disabler.")
 
-		var/datum/radial_menu_choice/verdict_option = new
+		var/datum/radial_menu_choice/ntsp_option = new
 		ntsp_option.image = image(icon = 'modular_zubbers/icons/obj/weapons/guns/ballistic.dmi', icon_state = "niimconsultantrevolver")
 		ntsp_option.info = span_boldnotice("This option forego a lethal sidearm in favours of having more ammo for your enforcer/lancer hardlight weapon system, contains 5 small pack and a tuner for switching frequency.")
 
