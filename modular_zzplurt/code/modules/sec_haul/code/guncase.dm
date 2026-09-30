@@ -61,7 +61,7 @@
 			spawn_path = /obj/item/storage/toolbox/guncase/skyrat/pistol/security/splurt/ladon
 		if("Protector .40 Revolver")
 			spawn_path = /obj/item/storage/toolbox/guncase/skyrat/pistol/security/splurt/protector
-		if("Laser Pistol)
+		if("Laser Pistol")
 			spawn_path = /obj/item/gun/energy/e_gun/mini
 		if("NT .22 Hardlight Ammo Pack")
 			spawn_path = /obj/item/storage/belt/holster/consultant
