@@ -6,7 +6,7 @@
 	icon_state = "rhino" //Sorry Niim but the signalis reference must not be forgotten
 	fire_sound = 'modular_zzplurt/sound/items/weapons/gun/gunshot_strong.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
-	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/cylinder/sec45rt
+	accepted_magazine_type = /obj/item/ammo_box/magazine/internal/cylinder/romtech45
 
 //Taken from https://github.com/ParadiseSS13/Paradise/blob/51e176654c3d86d61707689c9ab218edd36153c3/sound/weapons/gunshots/gunshot_strong.ogg
 //No attribution available for authorship

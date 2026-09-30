@@ -146,9 +146,6 @@
 		loaded_projectile = new /obj/projectile/bullet/security/smart(src)
 	return ..()
 
-/obj/item/ammo_box/magazine/internal/cylinder/sec45rt
-	caliber = CALIBER_9X17MM
-
 /obj/item/ammo_box/magazine/security
 	name = "handgun magazine (9x17mm)"
 	ammo_type = /obj/item/ammo_casing/c9x17mm
@@ -159,12 +156,24 @@
 	multitype = FALSE
 
 // .45 RT
+
+/obj/item/ammo_box/magazine/internal/cylinder/romtech45
+	ammo_type = /obj/item/ammo_casing/c45rt
+	caliber = CALIBER_45RT
+	max_ammo = 5
+
 /obj/item/ammo_casing/c45rt
-	name = ".45 Romulus Technology"
-	desc = "A small rimmed cartridge intended for usage in revolvers."
+	name = ".45 RT heavy revolver bullet"
+	desc = "A rimmed cartridge with a solid steel core, incredible stopping power"
 	icon_state = "223-casing"
 	caliber = CALIBER_45RT
 	projectile_type = /obj/projectile/bullet/c45rt
+
+/obj/item/ammo_casing/c45rt/hv
+	name = ".45 RT high velocity bullet"
+	desc = "A rimmed cartridge with more propellant and a shaped armour piercing cap, less stopping power"
+	icon_state = "223-casing"
+	projectile_type = /obj/projectile/bullet/c45rt/hv
 
 /obj/projectile/bullet/c45rt
 	name = "heavy .45 revolver bullet"
@@ -174,8 +183,8 @@
 
 /obj/projectile/bullet/c45rt/hv
 	name = "high velocity .45 revolver bullet"
-	damage = 22
-	armour_penetration = 25
+	damage = 23
+	armour_penetration = 30
 	speed = 1.6
 	stamina = 0
 
