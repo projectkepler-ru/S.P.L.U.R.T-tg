@@ -20,9 +20,9 @@
 		light_overlay = "flight", \
 		overlay_x = 2, \
 		overlay_y = 5)
-//While not everyone is guilty, many of us stood by and watched, letting these bad things happen
-//Any doubts perhaps? a whimper? Plentiful, but the changes that got us where we are today weren't good changes
-//Nor were they made all by good people
+//Hey, so if you ever read this and wondered, Why? Well, because I couldn't stand the idea of someone who can go on and crush other people's dreams.
+// When me and anne worked together on all sorts of PR, primarily anything that involve sec balances. We remind ourselves who are we coding for
+//I think there's nothing more harmful than the clique that lead to the murphy becoming a thing, even more so it was allowed to exist in this state for so long.
 /obj/item/gun/ballistic/automatic/pistol/sec_glock
 	name = "\improper 'Ladon' Security Pistol"
 	desc = "A well built all rounder standard sidearm of NanoTrasen station security force chambered in 9x17mm. It comes with a revolutionary quick-reload system."
@@ -30,6 +30,21 @@
 	icon_state = "ladon"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/security
 	fire_sound = 'modular_zubbers/sound/weapons/gun/lock/shot.ogg'
-	fire_delay = 3 //I should note that during testing the gun could honest to god have it's fire delay as low as 0 and it would still not be kinda eh, but the starch differences now is that this is atleast something you could viably pull out in an emergency or dualwield for more damage
+	fire_delay = 3
 	burst_delay = 0
 	suppressor_x_offset = 5
+	can_suppress = TRUE
+
+/*
+Kali Note
+I should note that during testing the gun could honest to god have it's fire delay as low as 0
+And it would still not be kinda eh.
+The differences now is that this is atleast something you could viably pull out in an emergency
+as opposed to "I literally do not have anything else and I cannot melee it"
+Because the majority of the antagonist ran on this server can be shoved down or stunned.
+Which make the murphy paradoxically awful for security
+Because it make them do things they shouldn't while also being a gun that is objectively worse than nothing.
+This is netiher, this is actually better than nothing. While being balanced around mid to late round antagonist with the weaker starting ammo (That you switch out to HP or AP)
+Less Damage, more Ammo. It keeps armour actually relevant for antagonist, HP ammo for simple mob and unarmoured target. AP Ammo for mid to late round against armoured thraet (But with notably less damage per hit)
+This is fair and nice.
+*/
