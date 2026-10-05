@@ -147,13 +147,21 @@
 	return ..()
 
 /obj/item/ammo_box/magazine/security
-	name = "handgun magazine (9x17mm)"
+	name = "pistol magazine (9x17mm)"
 	ammo_type = /obj/item/ammo_casing/c9x17mm
 	multiple_sprites = AMMO_BOX_FULL_EMPTY
 	multiple_sprite_use_base = TRUE
 	caliber = CALIBER_9X17MM
 	max_ammo = 18
 	multitype = FALSE
+
+/obj/item/ammo_box/magazine/security/rocket
+	name = "pistol magazine (9x17mm Holo Targetting)"
+	desc = parent_type::desc + "Contains specialised holo-targetting round that burns on impact.  With a small charge inside that sparks on ejection, this one has less room for ammo and a lethal velocity to it's ejections."
+	ammo_type = /obj/item/ammo_casing/security
+	max_ammo = 12
+	base_icon_state = "9x19pI"
+	murphy_eject_sound = 'sound/items/weapons/gun/general/rocket_launch.ogg'
 
 // .45 RT
 

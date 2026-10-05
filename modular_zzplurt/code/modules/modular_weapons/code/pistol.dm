@@ -20,7 +20,7 @@
 		light_overlay = "flight", \
 		overlay_x = 2, \
 		overlay_y = 5)
-//Hey, so if you ever read this and wondered, Why? Well, because I couldn't stand the idea of someone who can go on and crush other people's dreams.
+//Hey, so if you ever read this and wondered, Why this rework? Well, because I couldn't stand the idea of someone who can go on and crush other people's dreams.
 // When me and anne worked together on all sorts of PR, primarily anything that involve sec balances. We remind ourselves who are we coding for
 //I think there's nothing more harmful than the clique that lead to the murphy becoming a thing, even more so it was allowed to exist in this state for so long.
 /obj/item/gun/ballistic/automatic/pistol/sec_glock

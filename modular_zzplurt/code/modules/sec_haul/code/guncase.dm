@@ -87,7 +87,7 @@
 
 /obj/item/storage/toolbox/guncase/skyrat/pistol/security/splurt
 	name = "generic gunset"
-	desc = "You should not be seeing this!"
+
 	icon = 'modular_zzplurt/icons/obj/weapons/sec_haul/gun_case.dmi'
 	icon_state = "secsidearm"
 
