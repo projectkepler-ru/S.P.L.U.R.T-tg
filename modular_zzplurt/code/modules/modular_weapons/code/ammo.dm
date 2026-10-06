@@ -90,6 +90,12 @@
 	projectile_type = /obj/projectile/bullet/c9x17mm/rubber
 	harmful = FALSE
 
+/obj/item/ammo_casing/c9x17mm/holo_targetting
+	name = "9x17mm Holo-Targetting casing"
+	desc = "A 9x17mm bullet casing. This one fires a bullet of 'Holo-Targetting Smart Munition'."
+	projectile_type = /obj/projectile/bullet/c9x17mm/ht
+	advanced_print_req = TRUE
+
 // MP-S5 VIG PROJECTILES
 /obj/projectile/bullet/c9x17mm
 	name = "9x17mm bullet"
@@ -139,6 +145,18 @@
 	sharpness = NONE
 	embed_type = null
 
+/obj/projectile/bullet/c9x17mm/ht
+	name = "9x17mm holo-targetting bullet"
+	damage = 20
+	wound_bonus = -15
+
+/obj/projectile/bullet/c9x17mm/ht/on_hit(atom/target, blocked, pierce_hit)
+	. = ..()
+	if(!isliving(target))
+		return
+	var/mob/living/designated_target = target
+	designated_target.apply_status_effect(/datum/status_effect/designated_target)
+
 // Bubber Related Ammo Override
 /obj/item/ammo_casing/c9x17mm/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", atom/fired_from)
 	if(istype(fired_from, /obj/item/gun/ballistic/automatic/pistol/sec_glock/smart))
@@ -154,14 +172,19 @@
 	caliber = CALIBER_9X17MM
 	max_ammo = 18
 	multitype = FALSE
+	icon = 'modular_zzplurt/icons/obj/weapons/guns/ballisticmags.dmi'
+	base_icon_state = "hpistol"
+	ammo_band_icon = "+hpistol_ammo_band"
+	ammo_band_color = null
 
 /obj/item/ammo_box/magazine/security/rocket
 	name = "pistol magazine (9x17mm Holo Targetting)"
 	desc = parent_type::desc + "Contains specialised holo-targetting round that burns on impact.  With a small charge inside that sparks on ejection, this one has less room for ammo and a lethal velocity to it's ejections."
-	ammo_type = /obj/item/ammo_casing/security
+	ammo_type = /obj/item/ammo_casing/c9x17mm/holo_targetting
 	max_ammo = 12
-	base_icon_state = "9x19pI"
+	base_icon_state = "hpistol"
 	murphy_eject_sound = 'sound/items/weapons/gun/general/rocket_launch.ogg'
+	icon = 'modular_zzplurt/icons/obj/weapons/guns/ballisticmags.dmi'
 
 // .45 RT
 
