@@ -167,7 +167,7 @@
 /obj/item/ammo_box/magazine/security
 	name = "pistol magazine (9x17mm)"
 	ammo_type = /obj/item/ammo_casing/c9x17mm
-	multiple_sprites = AMMO_BOX_FULL_EMPTY
+	multiple_sprites = AMMO_BOX_PER_BULLET
 	multiple_sprite_use_base = TRUE
 	caliber = CALIBER_9X17MM
 	max_ammo = 16
