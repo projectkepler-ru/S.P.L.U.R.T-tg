@@ -96,9 +96,9 @@
 	id = "m9x17mm_pmag_rubber"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(
-		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 2, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 3
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 2, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 2
 	)
-	build_path = /obj/item/ammo_box/magazine/security/rubber
+	build_path = /obj/item/ammo_box/magazine/security/splurt_rubber
 	category = list(
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)
@@ -111,9 +111,9 @@
 	id = "m9x17mm_pmag_ihdf"
 	build_type = PROTOLATHE | AWAY_LATHE
 	materials = list(
-		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 4, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 1
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 2, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 1
 	)
-	build_path = /obj/item/ammo_box/magazine/security/ihdf
+	build_path = /obj/item/ammo_box/magazine/security/splurt_ihdf
 	category = list(
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)
@@ -128,14 +128,14 @@
 	materials = list(
 		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 6, /datum/material/silver = HALF_SHEET_MATERIAL_AMOUNT * 6, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 4
 	)
-	build_path = /obj/item/ammo_box/magazine/security/hp
+	build_path = /obj/item/ammo_box/magazine/security/splurt_hp
 	category = list(
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
 
 /datum/design/m9x17mm_pmag_ap
-	name = "9x17mm Armor Piercing MP-S5 Magazine (Lethal)"
+	name = "9x17mm Armor Piercing Pistol Magazine (Lethal)"
 	desc = "A standard magazine for all 9mm security pistol, holds 17 rounds of 9x17mm, this one is full of bullets that are meant for armored targets, \
 	as they ignore as much armor of the target as it can, shredding right through. Nearly useless against unarmored targets though."
 	id = "m9x17mm_pmag_ap"
@@ -143,7 +143,7 @@
 	materials = list(
 		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 4, /datum/material/titanium = SHEET_MATERIAL_AMOUNT * 4, /datum/material/plastic = HALF_SHEET_MATERIAL_AMOUNT * 6
 	)
-	build_path = /obj/item/ammo_box/magazine/security/ap
+	build_path = /obj/item/ammo_box/magazine/security/splurt_ap
 	category = list(
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)
