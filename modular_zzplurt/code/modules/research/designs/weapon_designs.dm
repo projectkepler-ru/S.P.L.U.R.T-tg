@@ -148,7 +148,7 @@
 		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
-
+// Misc items
 /datum/design/rt45c
 	name = ".45 Romulus Heavy Revolver Cartridge (Lethal)"
 	desc = "A cartridge for the all pistols chambered in .45 RT, You almost wish they'd make a speedloader of these things."
