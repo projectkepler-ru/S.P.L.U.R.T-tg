@@ -67,32 +67,32 @@
 
 /obj/item/ammo_casing/c9x17mm/ap
 	name = "9x17mm armor-piercing bullet casing"
-	desc = "A 9x17mm bullet casing. This one fires an armor-piercing projectile."
+	desc = parent_type::desc + "This one fires an armor-piercing projectile."
 	projectile_type = /obj/projectile/bullet/c9x17mm/ap
 	custom_materials = AMMO_MATS_AP
 	advanced_print_req = TRUE
 
 /obj/item/ammo_casing/c9x17mm/hp
 	name = "9x17mm hollow-point bullet casing"
-	desc = "A 9x17mm bullet casing. This one fires a hollow-point projectile. Very lethal to unarmored opponents."
+	desc = parent_type::desc + "This one fires a hollow-point projectile. Very lethal to unarmored opponents."
 	projectile_type = /obj/projectile/bullet/c9x17mm/hp
 	advanced_print_req = TRUE
 
 /obj/item/ammo_casing/c9x17mm/ihdf
 	name = "9x17mm IHDF casing"
-	desc = "A 9x17mm bullet casing. This one fires a bullet of 'Intelligent High-Impact Dispersal Foam', which is best compared to a riot-grade foam dart."
+	desc = parent_type::desc + "This one fires a bullet of 'Intelligent High-Impact Dispersal Foam', which is best compared to a riot-grade foam dart."
 	projectile_type = /obj/projectile/bullet/c9x17mm/ihdf
 	harmful = FALSE
 
 /obj/item/ammo_casing/c9x17mm/rubber
 	name = "9x17mm rubber casing"
-	desc = "A 9x17mm bullet casing. This less than lethal round sure hurts to get shot by, but causes little physical harm."
+	desc = parent_type::desc + "This less than lethal round sure hurts to get shot by, but causes little physical harm."
 	projectile_type = /obj/projectile/bullet/c9x17mm/rubber
 	harmful = FALSE
 
 /obj/item/ammo_casing/c9x17mm/holo_targetting
 	name = "9x17mm Holo-Targetting casing"
-	desc = "A 9x17mm bullet casing. This one fires a bullet of 'Holo-Targetting Smart Munition'."
+	desc = parent_type::desc + "This one fires a bullet of 'Holo-Targetting Smart Munition'."
 	projectile_type = /obj/projectile/bullet/c9x17mm/ht
 	advanced_print_req = TRUE
 
@@ -174,17 +174,43 @@
 	multitype = FALSE
 	icon = 'modular_zzplurt/icons/obj/weapons/guns/ballisticmags.dmi'
 	base_icon_state = "hpistol"
-	ammo_band_icon = "+hpistol_ammo_band"
-	ammo_band_color = null
 
+//In the rare edgecase fuckery bubber decides to add more ammo for the pistol, these exists to make it easier to override or remove
+/obj/item/ammo_box/magazine/security/splurt_ap
+	name = "pistol magazine (9x17mm Armour Piercing)"
+	ammo_type = /obj/item/ammo_casing/c9x17mm/ap
+	ammo_band_color = "#a7aab5"
+	ammo_band_icon = "+hpistol_ammo_band"
+
+/obj/item/ammo_box/magazine/security/splurt_hp
+	name = "pistol magazine (9x17mm Hollow Point)"
+	ammo_type = /obj/item/ammo_casing/c9x17mm/hp
+	ammo_band_color = "#c3474d"
+	ammo_band_icon = "+hpistol_ammo_band"
+
+/obj/item/ammo_box/magazine/security/splurt_rubber
+	name = "pistol magazine (9x17mm Rubber)"
+	ammo_type = /obj/item/ammo_casing/c9x17mm/rubber
+	ammo_band_color = "#5c70da"
+	ammo_band_icon = "+hpistol_ammo_band"
+
+/obj/item/ammo_box/magazine/security/splurt_ihdf
+	name = "pistol magazine (9x17mm Intelligent Dispersal Foam)"
+	ammo_type = /obj/item/ammo_casing/c9x17mm/ihdf
+	ammo_band_color = "#7c50a1"
+	ammo_band_icon = "+hpistol_ammo_band"
+
+//Holo targetting, override Rocket Eject
 /obj/item/ammo_box/magazine/security/rocket
 	name = "pistol magazine (9x17mm Holo Targetting)"
 	desc = parent_type::desc + "Contains specialised holo-targetting round that burns on impact.  With a small charge inside that sparks on ejection, this one has less room for ammo and a lethal velocity to it's ejections."
 	ammo_type = /obj/item/ammo_casing/c9x17mm/holo_targetting
 	max_ammo = 12
-	base_icon_state = "hpistol"
+	base_icon_state = "hpistol_ht"
 	murphy_eject_sound = 'sound/items/weapons/gun/general/rocket_launch.ogg'
 	icon = 'modular_zzplurt/icons/obj/weapons/guns/ballisticmags.dmi'
+	ammo_band_icon = "+hpistol_ammo_band"
+	ammo_band_color = "#aa6300"
 
 // .45 RT
 
