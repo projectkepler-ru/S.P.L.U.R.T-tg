@@ -149,6 +149,34 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
 
+/datum/design/rt45c
+	name = ".45 Romulus Heavy Revolver Cartridge (Lethal)"
+	desc = "A cartridge for the all pistols chambered in .45 RT, You almost wish they'd make a speedloader of these things."
+	id = "rt45c"
+	build_type = PROTOLATHE | AWAY_LATHE
+	materials = list(
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 4
+	)
+	build_path = /obj/item/ammo_casing/c45rt
+	category = list(
+		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
+
+/datum/design/rt45c_hv
+	name = ".45 Romulus Heavy Revolver Cartridge (Lethal)"
+	desc = "A cartridge for the all pistols chambered in .45 RT, High velocity projectile yield higher penetration but has reduced stopping power"
+	id = "rt45c_hv"
+	build_type = PROTOLATHE | AWAY_LATHE
+	materials = list(
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 4, /datum/material/silver = SHEET_MATERIAL_AMOUNT * 4
+	)
+	build_path = /obj/item/ammo_casing/c45rt/hv
+	category = list(
+		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
+
 // Special Weapon Kit
 
 /datum/design/wt458_kit

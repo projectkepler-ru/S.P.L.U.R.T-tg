@@ -6,6 +6,8 @@
 	design_ids += "m9x17mm_mag_ap"
 	design_ids += "m9x17mm_pmag_hp"
 	design_ids += "m9x17mm_pmag_ap"
+	design_ids += "rt45c"
+	design_ids += "rt45c_hv"
 	design_ids -= "m9mm_sec"
 	. = ..()
 
