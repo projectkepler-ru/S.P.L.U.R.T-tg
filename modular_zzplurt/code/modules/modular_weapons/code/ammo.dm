@@ -234,7 +234,7 @@
 
 /obj/projectile/bullet/c45rt
 	name = "heavy .45 revolver bullet"
-	damage = 28
+	damage = 30
 	wound_bonus = -25
 	stamina = 8
 
