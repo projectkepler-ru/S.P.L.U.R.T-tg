@@ -1,4 +1,4 @@
-//These bits should be archived incase someone want to try anything with it.
+//These bits should be archived incase someone want to try anything with it but they're fully functional
 /obj/item/splurtweaponspawner_case
 	name = "security sidearm case"
 	desc = "contains your standard issue lethal security armament to be carried at all time. Use in hand to assemble"
@@ -63,9 +63,9 @@
 		if("Protector .40 Revolver")
 			spawn_path = /obj/item/storage/toolbox/guncase/skyrat/pistol/security/splurt/protector
 		if("Laser Pistol")
-			spawn_path = /obj/item/gun/energy/e_gun/mini
+			spawn_path = /obj/item/storage/belt/holster/energy/laser_pistol
 		if("NT .22 Hardlight Ammo Pack")
-			spawn_path = /obj/item/storage/belt/holster/consultant
+			spawn_path = /obj/item/storage/toolbox/guncase/skyrat/pistol/security/splurt/energy_pack
 		else
 			return
 
@@ -102,3 +102,13 @@
 	name = "protector gunset"
 
 	weapon_to_spawn = /obj/item/gun/ballistic/revolver/protector_revolver
+
+/obj/item/storage/toolbox/guncase/skyrat/pistol/security/splurt/energy_pack
+	name = "Hardlight energy pack"
+	icon = 'modular_zzplurt/icons/obj/weapons/sec_haul/gun_case.dmi'
+	icon_state = "secsidearm_energy"
+/obj/item/storage/toolbox/guncase/skyrat/pistol/security/splurt/energy_pack/PopulateContents()
+	new /obj/item/ammo_box/magazine/recharge/ntusp(src)
+	new /obj/item/ammo_box/magazine/recharge/ntusp(src)
+	new /obj/item/ammo_box/magazine/recharge/ntusp(src)
+	new /obj/item/ntusp_conversion_kit(src)
