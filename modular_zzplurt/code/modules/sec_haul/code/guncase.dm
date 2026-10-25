@@ -1,3 +1,4 @@
+//These bits should be archived incase someone want to try anything with it.
 /obj/item/splurtweaponspawner_case
 	name = "security sidearm case"
 	desc = "contains your standard issue lethal security armament to be carried at all time. Use in hand to assemble"
