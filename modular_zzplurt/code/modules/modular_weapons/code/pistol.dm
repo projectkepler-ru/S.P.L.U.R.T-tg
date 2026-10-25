@@ -35,10 +35,15 @@
 	suppressor_x_offset = 5
 	can_suppress = TRUE
 
+//This is because we're already overriding other bits anyway,  so i'm not feeling like touching that unless cato does.
+/obj/item/gun/ballistic/automatic/pistol/sec_glock/smart
+	icon = 'modular_zzplurt/icons/obj/weapons/guns/ballistic_40x32.dmi'
+	projectile_damage_multiplier = 1
+
 /*
 Kali Note
 I should note that during testing the gun could honest to god have it's fire delay as low as 0
-And it would still not be kinda eh.
+And it would still not be kinda eh. main issue is caused by server ticklag
 The differences now is that this is atleast something you could viably pull out in an emergency
 as opposed to "I literally do not have anything else and I cannot melee it"
 Because the majority of the antagonist ran on this server can be shoved down or stunned.

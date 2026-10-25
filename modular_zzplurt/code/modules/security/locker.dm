@@ -1,3 +1,4 @@
+// NOTICE: ADD ANY NEW ITEM THAT ARE NORMALLY SPAWNED IN THE LOCKER, THIS COMPLETELY OVERRIDE THE CLOSET SPAWN!
 /obj/structure/closet/secure_closet/security/sec/PopulateContents()
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/clothing/suit/armor/vest/alt/sec(src)
