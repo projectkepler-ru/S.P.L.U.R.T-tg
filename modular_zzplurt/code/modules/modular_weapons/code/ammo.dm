@@ -236,11 +236,11 @@
 	name = "heavy .45 revolver bullet"
 	damage = 30
 	wound_bonus = -25
-	stamina = 8
+	stamina = 9
 
 /obj/projectile/bullet/c45rt/hv
 	name = "high velocity .45 revolver bullet"
-	damage = 23
+	damage = 24
 	armour_penetration = 30
 	speed = 1.6
 	stamina = 0

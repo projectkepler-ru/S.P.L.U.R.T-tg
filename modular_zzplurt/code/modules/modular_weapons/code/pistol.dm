@@ -30,7 +30,7 @@
 	icon_state = "ladon"
 	accepted_magazine_type = /obj/item/ammo_box/magazine/security
 	fire_sound = 'modular_zubbers/sound/weapons/gun/lock/shot.ogg'
-	fire_delay = 3
+	fire_delay = 2
 	burst_delay = 0
 	suppressor_x_offset = 5
 	can_suppress = TRUE
