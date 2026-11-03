@@ -217,19 +217,33 @@
 /obj/item/ammo_box/magazine/internal/cylinder/romtech45
 	ammo_type = /obj/item/ammo_casing/c45rt
 	caliber = CALIBER_45RT
-	max_ammo = 5
+	max_ammo = 6
+
+//speedloader these are only obtainable via illegal tech or traitor uplink
+/obj/item/ammo_box/speedloader/c45rt
+	name = "speed loader (.45 RT)"
+	desc = "Designed to quickly reload six-chamber .45 Romulus Technology revolver."
+	icon_state = "38"
+	base_icon_state = "38"
+	ammo_type = /obj/item/ammo_casing/c45rt
+	max_ammo = 6
+	caliber = CALIBER_45RT
+	ammo_band_icon = "+38_ammo_band"
+	ammo_band_color = null
+	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 3)
 
 /obj/item/ammo_casing/c45rt
 	name = ".45 RT heavy revolver bullet"
 	desc = "A rimmed cartridge with a solid steel core, incredible stopping power"
-	icon_state = "223-casing"
+	icon = 'modular_zzplurt/icons/obj/weapons/guns/misc_ammo.dmi'
+	icon_state = "magnum"
 	caliber = CALIBER_45RT
 	projectile_type = /obj/projectile/bullet/c45rt
 
 /obj/item/ammo_casing/c45rt/hv
 	name = ".45 RT high velocity bullet"
 	desc = "A rimmed cartridge with more propellant and a shaped armour piercing cap, less stopping power"
-	icon_state = "223-casing"
+	icon_state = "magnum_hv"
 	projectile_type = /obj/projectile/bullet/c45rt/hv
 
 /obj/projectile/bullet/c45rt
