@@ -170,7 +170,7 @@
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	multiple_sprite_use_base = TRUE
 	caliber = CALIBER_9X17MM
-	max_ammo = 16
+	max_ammo = 17
 	multitype = FALSE
 	icon = 'modular_zzplurt/icons/obj/weapons/guns/ballisticmags.dmi'
 	base_icon_state = "hpistol"
