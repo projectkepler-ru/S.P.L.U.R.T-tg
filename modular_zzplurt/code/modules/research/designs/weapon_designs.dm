@@ -177,6 +177,34 @@
 	)
 	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
 
+/datum/design/rt45c_sl
+	name = ".45 Heavy Speedloader (Lethal)"
+	desc = "A speed loader for .45 Romulus Technology Cartridges. For when you really need to fulfill a promise"
+	id = "rt45c_sl"
+	build_type = PROTOLATHE | AWAY_LATHE
+	materials = list(
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 6
+	)
+	build_path = /obj/item/ammo_casing/c45rt
+	category = list(
+		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
+
+/datum/design/rt45c_sl
+	name = ".45 Heavy Speedloader (Lethal)"
+	desc = "A speed loader for .45 Romulus Technology Cartridges. For when you really need to fulfill a promise"
+	id = "rt45c_hv_sl"
+	build_type = PROTOLATHE | AWAY_LATHE
+	materials = list(
+		/datum/material/iron = HALF_SHEET_MATERIAL_AMOUNT * 6, /datum/material/silver = SHEET_MATERIAL_AMOUNT * 6
+	)
+	build_path = /obj/item/ammo_casing/c45rt
+	category = list(
+		RND_CATEGORY_WEAPONS + RND_SUBCATEGORY_WEAPONS_AMMO
+	)
+	departmental_flags = DEPARTMENT_BITFLAG_SECURITY
+
 // Special Weapon Kit
 
 /datum/design/wt458_kit
