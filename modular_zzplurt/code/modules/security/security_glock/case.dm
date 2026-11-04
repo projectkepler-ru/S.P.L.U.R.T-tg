@@ -16,7 +16,7 @@
 	. = ..()
 	new /obj/item/ammo_box/magazine/security(src)
 
-/* Archived incase we want to revisit this in the future because I don't think I can do it justice
+/* Archived incase we want to revisit this in the future because I don't think I can do it justice in this pr
 // NOTICE: ADD ANY NEW ITEM THAT ARE NORMALLY SPAWNED IN THE LOCKER, THIS COMPLETELY OVERRIDE THE CLOSET SPAWN!
 /obj/structure/closet/secure_closet/security/sec/PopulateContents()
 	new /obj/item/storage/belt/security/full(src)

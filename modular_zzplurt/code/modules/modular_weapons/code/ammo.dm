@@ -223,14 +223,26 @@
 /obj/item/ammo_box/speedloader/c45rt
 	name = "speed loader (.45 RT)"
 	desc = "Designed to quickly reload six-chamber .45 Romulus Technology revolver."
-	icon_state = "38"
-	base_icon_state = "38"
+	icon_state = "45"
+	base_icon_state = "45"
 	ammo_type = /obj/item/ammo_casing/c45rt
 	max_ammo = 6
 	caliber = CALIBER_45RT
-	ammo_band_icon = "+38_ammo_band"
+	ammo_band_icon = "+45_ammo_band"
 	ammo_band_color = null
 	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 3)
+
+/obj/item/ammo_box/speedloader/c45rt/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-base"
+
+/obj/item/ammo_box/speedloader/c45rt/update_overlays()
+	. = ..()
+	if(!LAZYLEN(stored_ammo))
+		return
+	for(var/inserted_ammo in 1 to stored_ammo.len)
+		var/obj/item/ammo_casing/c45rt/boolet = stored_ammo[inserted_ammo]
+		. += "45-[boolet::lead_or_nuh]-[inserted_ammo]"
 
 /obj/item/ammo_casing/c45rt
 	name = ".45 RT heavy revolver bullet"
@@ -239,12 +251,14 @@
 	icon_state = "magnum"
 	caliber = CALIBER_45RT
 	projectile_type = /obj/projectile/bullet/c45rt
+	var/lead_or_nuh = "lead"
 
 /obj/item/ammo_casing/c45rt/hv
 	name = ".45 RT high velocity bullet"
 	desc = "A rimmed cartridge with more propellant and a shaped armour piercing cap, less stopping power"
 	icon_state = "magnum_hv"
 	projectile_type = /obj/projectile/bullet/c45rt/hv
+	lead_or_nuh = "nuh"
 
 /obj/projectile/bullet/c45rt
 	name = "heavy .45 revolver bullet"
@@ -300,3 +314,19 @@
 	armour_penetration = 20
 	wound_bonus = -15
 	wound_falloff_tile = 0
+
+//Rigid Storage and things that we probably should less-shitcode
+//Why care for balance in ERP server? Because the average players aren't good
+/obj/item/storage/pouch/extended_casing_pouch
+	name = "large revolver casing pouch"
+	desc = "A large pouch with straps for holding loose revolver casing and nothing else.."
+	icon = 'modular_zzplurt/icons/obj/weapons/guns/misc_ammo.dmi'
+	icon_state = "reloadpouch"
+
+/obj/item/storage/pouch/extended_casing_pouch/Initialize(mapload)
+	. = ..()
+	atom_storage.max_specific_storage = WEIGHT_CLASS_SMALL
+	atom_storage.max_total_storage = 24
+	atom_storage.max_slots = 24
+	atom_storage.numerical_stacking = FALSE
+	atom_storage.can_hold = typecacheof(list( /obj/item/ammo_casing/c357, /obj/item/ammo_casing/c38, /obj/item/ammo_casing/c45rt))
