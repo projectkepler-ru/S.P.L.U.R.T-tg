@@ -236,7 +236,6 @@
 	name = "speed loader (.45 RT High Velocity)"
 	ammo_type = /obj/item/ammo_casing/c45rt/hv
 	ammo_band_color = COLOR_AMMO_TRUESTRIKE
-	custom_materials = list(/datum/material/iron = SHEET_MATERIAL_AMOUNT * 3)
 
 /obj/item/ammo_box/speedloader/c45rt/update_icon_state()
 	. = ..()
