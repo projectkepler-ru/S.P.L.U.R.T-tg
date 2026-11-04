@@ -44,8 +44,8 @@
 Kali Note
 I should note that during testing the gun could honest to god have it's fire delay as low as 0
 And it would still not be kinda eh. main issue is caused by server ticklag
-The differences now is that this is atleast something you could viably pull out in an emergency
-as opposed to "I literally do not have anything else and I cannot melee it"
+The differences now is that this actually scales with the round tech
+as opposed to "I literally do not have anything else and I cannot melee it" I don't like that
 Because the majority of the antagonist ran on this server can be shoved down or stunned.
 Which make the murphy paradoxically awful for security
 Because it make them do things they shouldn't while also being a gun that is objectively worse than nothing.
